@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout title="Bharathi College of Nursing | Excellence in Healthcare Education" activeNav="Home">
@@ -39,13 +40,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <!-- CTA Buttons -->
         <div class="flex flex-wrap gap-4">
           <a
-            href="/contact"
+            href={`${base}contact`}
             class="bg-gold text-gold-dark font-work-sans font-semibold text-lg px-8 py-4 rounded-md hover:bg-yellow-400 transition-colors"
           >
             Apply for Admission
           </a>
           <a
-            href="/courses"
+            href={`${base}courses`}
             class="backdrop-blur-md bg-white/10 border border-white/20 text-white font-work-sans font-semibold text-lg px-8 py-4 rounded-md hover:bg-white/20 transition-colors"
           >
             Explore Courses
@@ -72,7 +73,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <p class="text-white/80 text-base max-w-lg leading-relaxed">
             Experience hands-on training with cutting-edge medical technology that mirrors real-world clinical environments in India's best hospitals.
           </p>
-          <a href="/facilities" class="flex items-center gap-2 text-white font-bold hover:text-gold transition-colors">
+          <a href={`${base}facilities`} class="flex items-center gap-2 text-white font-bold hover:text-gold transition-colors">
             Discover Our Campus
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
           </a>
@@ -159,7 +160,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
 
         <div class="pt-6">
-          <a href="/about" class="flex items-center gap-3 group">
+          <a href={`${base}about`} class="flex items-center gap-3 group">
             <div class="w-12 h-px bg-navy group-hover:w-16 transition-all"></div>
             <span class="font-bold text-navy text-base">LEARN MORE ABOUT OUR VISION</span>
           </a>
@@ -197,7 +198,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             ))}
           </ul>
           <a
-            href="/courses"
+            href={`${base}courses`}
             class="mt-auto border border-gray-500 text-navy font-bold text-base text-center py-4 hover:bg-navy hover:text-white transition-colors"
           >
             VIEW CURRICULUM
@@ -222,7 +223,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             ))}
           </ul>
           <a
-            href="/courses"
+            href={`${base}courses`}
             class="mt-auto border border-gray-500 text-navy font-bold text-base text-center py-4 hover:bg-navy hover:text-white transition-colors"
           >
             VIEW CURRICULUM
@@ -249,7 +250,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           Download Prospectus
         </a>
         <a
-          href="/contact"
+          href={`${base}contact`}
           class="bg-white text-navy font-work-sans font-semibold text-lg px-10 py-5 rounded-md hover:bg-gray-100 transition-colors"
         >
           Inquire Now

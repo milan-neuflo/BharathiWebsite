@@ -3,19 +3,20 @@ interface Props {
   activeNav?: string;
 }
 const { activeNav = '' } = Astro.props;
+const base = import.meta.env.BASE_URL;
 
 const navLinks = [
-  { label: 'Home', href: '/' },
-  { label: 'About', href: '/about' },
-  { label: 'Courses', href: '/courses' },
-  { label: 'Facilities', href: '/facilities' },
-  { label: 'Gallery', href: '/gallery' },
+  { label: 'Home', href: `${base}` },
+  { label: 'About', href: `${base}about` },
+  { label: 'Courses', href: `${base}courses` },
+  { label: 'Facilities', href: `${base}facilities` },
+  { label: 'Gallery', href: `${base}gallery` },
 ];
 ---
 
 <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-white/80 shadow-sm">
   <nav class="max-w-container mx-auto flex items-center justify-between px-8 py-4">
-    <a href="/" class="flex items-center">
+    <a href={base} class="flex items-center">
       <span class="font-newsreader text-2xl font-bold text-navy">Bharathi</span>
       <span class="font-work-sans text-sm text-gold-dark ml-1 tracking-wide">NURSING</span>
     </a>
@@ -37,7 +38,7 @@ const navLinks = [
     </div>
 
     <a
-      href="/contact"
+      href={`${base}contact`}
       class="hidden md:inline-flex bg-navy text-white font-work-sans font-semibold text-base px-6 py-2.5 rounded-md hover:bg-navy/90 transition-colors"
     >
       Admissions
@@ -68,7 +69,7 @@ const navLinks = [
         </a>
       ))}
       <a
-        href="/contact"
+        href={`${base}contact`}
         class="bg-navy text-white font-work-sans font-semibold text-base px-6 py-2.5 rounded-md text-center"
       >
         Admissions

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
 
 const courses = [
   {
@@ -124,7 +125,7 @@ const faqs = [
             </div>
 
             <a
-              href="/contact"
+              href={`${base}contact`}
               class="self-start bg-navy text-white font-work-sans font-semibold text-base px-8 py-4 rounded-md hover:bg-navy/90 transition-colors"
             >
               Apply Now
@@ -211,7 +212,7 @@ const faqs = [
         Applications for the 2026 Academic Session are now open. Limited seats available.
       </p>
       <div class="flex flex-wrap justify-center gap-6">
-        <a href="/contact" class="bg-gold text-gold-dark font-work-sans font-semibold text-lg px-10 py-5 rounded-md hover:bg-yellow-400 transition-colors">
+        <a href={`${base}contact`} class="bg-gold text-gold-dark font-work-sans font-semibold text-lg px-10 py-5 rounded-md hover:bg-yellow-400 transition-colors">
           Apply for Admission
         </a>
         <a href="#" class="bg-white text-navy font-work-sans font-semibold text-lg px-10 py-5 rounded-md hover:bg-gray-100 transition-colors">

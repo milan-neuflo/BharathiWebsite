@@ -1,0 +1,33 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__plugin_figma_figma__get_design_context",
+      "mcp__plugin_figma_figma__whoami",
+      "mcp__plugin_figma_figma__get_screenshot",
+      "Bash(claude mcp:*)",
+      "Bash(claude plugin:*)",
+      "Bash(node -e ':*)",
+      "Bash(pnpm create:*)",
+      "Bash(cp -r temp-astro/* .)",
+      "Bash(cp temp-astro/.* .)",
+      "Bash(rm -rf temp-astro)",
+      "Bash(mv temp-astro/package.json .)",
+      "Bash(mv temp-astro/package-lock.json .)",
+      "Bash(mv temp-astro/tsconfig.json .)",
+      "Bash(mv temp-astro/astro.config.mjs .)",
+      "Bash(mv temp-astro/src .)",
+      "Bash(rm -rf node_modules package-lock.json)",
+      "Bash(pnpm install:*)",
+      "Bash(pnpm approve-builds:*)",
+      "Bash(npx pnpm:*)",
+      "Bash(pnpm rebuild:*)",
+      "Bash(pnpm build:*)",
+      "Bash(pnpm dev:*)",
+      "Bash(npx astro:*)",
+      "Bash(gh auth:*)",
+      "Bash(gh repo:*)",
+      "Bash(gh api:*)",
+      "Bash(gh run:*)"
+    ]
+  }
+}
