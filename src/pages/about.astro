@@ -1,0 +1,216 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const leaders = [
+  {
+    name: 'Dr. Lakshmi Devi',
+    role: 'Principal & Director of Nursing',
+    bio: 'Ph.D. in Nursing Education with over 25 years of experience in academic leadership and clinical practice across South India.',
+    image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&q=80',
+  },
+  {
+    name: 'Dr. Priya Sharma',
+    role: 'Vice Principal & Head of Research',
+    bio: 'Specializes in community health nursing with published research in leading international healthcare journals.',
+    image: 'https://images.unsplash.com/photo-1594824476967-48c8b964ac31?w=400&q=80',
+  },
+  {
+    name: 'Prof. Meena Krishnan',
+    role: 'Head of Clinical Training',
+    bio: 'Former Chief Nursing Officer at Manipal Hospitals with expertise in simulation-based learning methodologies.',
+    image: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=400&q=80',
+  },
+  {
+    name: 'Dr. Anitha Raj',
+    role: 'Head of Student Affairs',
+    bio: 'Dedicated to holistic student development with a focus on mentorship, career guidance, and emotional well-being.',
+    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80',
+  },
+];
+
+const stats = [
+  { value: '25+', label: 'Years of Excellence' },
+  { value: '5000+', label: 'Alumni Network' },
+  { value: '98%', label: 'Placement Rate' },
+  { value: '50+', label: 'Hospital Partners' },
+];
+
+const milestones = [
+  { year: '1998', text: 'Founded as one of the first private nursing colleges in Bangalore' },
+  { year: '2004', text: 'Received permanent affiliation from Rajiv Gandhi University of Health Sciences' },
+  { year: '2010', text: 'Launched state-of-the-art simulation lab — first of its kind in Karnataka' },
+  { year: '2015', text: 'Established international exchange program with nursing schools in Singapore and UK' },
+  { year: '2020', text: 'Achieved "A" grade accreditation from NAAC' },
+  { year: '2024', text: 'Expanded campus with a new digital learning center and hostel facility' },
+];
+---
+
+<BaseLayout title="About Us | Bharathi College of Nursing" activeNav="About">
+
+  <!-- ============ HERO ============ -->
+  <section class="relative py-32 overflow-hidden">
+    <img
+      src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1920&q=80"
+      alt="Nursing students"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-navy/90"></div>
+    <div class="relative max-w-container mx-auto px-8 text-center flex flex-col items-center gap-6">
+      <span class="font-work-sans font-semibold text-gold text-sm uppercase tracking-[2.8px]">About Us</span>
+      <h1 class="font-newsreader italic text-5xl md:text-7xl text-white leading-tight">
+        Shaping the Future of<br />Healthcare Education
+      </h1>
+      <p class="text-[#d8e3fb] text-xl max-w-2xl leading-relaxed">
+        For over two decades, Bharathi College of Nursing has been nurturing compassionate, skilled, and visionary nursing professionals.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ STATS BAR ============ -->
+  <section class="bg-gold py-12">
+    <div class="max-w-container mx-auto px-8 grid grid-cols-2 md:grid-cols-4 gap-8">
+      {stats.map((stat) => (
+        <div class="text-center">
+          <div class="font-newsreader text-5xl font-bold text-navy">{stat.value}</div>
+          <div class="font-work-sans text-gold-dark text-sm uppercase tracking-wider mt-2">{stat.label}</div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- ============ MISSION & VISION ============ -->
+  <section class="bg-light-bg px-8 py-24">
+    <div class="max-w-container mx-auto flex flex-col lg:flex-row gap-20 items-center">
+      <div class="flex-1 flex flex-col gap-12">
+        <!-- Mission -->
+        <div class="flex flex-col gap-6">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-px bg-gold"></div>
+            <span class="font-work-sans font-semibold text-gold-dark text-sm uppercase tracking-[2.8px]">Our Mission</span>
+          </div>
+          <h2 class="font-newsreader italic text-4xl md:text-5xl text-navy leading-tight">
+            Empowering Women Through Clinical Excellence
+          </h2>
+          <p class="text-text-secondary text-lg leading-relaxed">
+            To provide holistic nursing education that cultivates clinical competence, critical thinking, and compassionate care. We are dedicated to empowering female students with the knowledge and skills to become leaders in healthcare, serving communities across India and beyond.
+          </p>
+        </div>
+
+        <!-- Vision -->
+        <div class="flex flex-col gap-6">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-px bg-navy"></div>
+            <span class="font-work-sans font-semibold text-navy text-sm uppercase tracking-[2.8px]">Our Vision</span>
+          </div>
+          <h2 class="font-newsreader italic text-4xl md:text-5xl text-navy leading-tight">
+            A Global Standard for Nursing Education
+          </h2>
+          <p class="text-text-secondary text-lg leading-relaxed">
+            To be recognized as a center of excellence in nursing education in South Asia, producing graduates who set the benchmark for patient care, clinical research, and healthcare innovation across multi-specialty and community settings.
+          </p>
+        </div>
+      </div>
+
+      <!-- Image -->
+      <div class="flex-shrink-0 w-full lg:w-[480px]">
+        <div class="rounded-lg overflow-hidden shadow-2xl">
+          <img
+            src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80"
+            alt="Nursing classroom"
+            class="w-full h-auto object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TIMELINE / MILESTONES ============ -->
+  <section class="bg-navy px-8 py-24">
+    <div class="max-w-container mx-auto">
+      <div class="text-center mb-16 flex flex-col items-center gap-4">
+        <span class="font-work-sans font-semibold text-gold text-sm uppercase tracking-[2.8px]">Our Journey</span>
+        <h2 class="font-newsreader italic text-5xl text-white">Milestones That Define Us</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {milestones.map((m) => (
+          <div class="border border-white/10 rounded-lg p-8 flex flex-col gap-4 hover:border-gold/40 transition-colors">
+            <span class="font-newsreader text-4xl font-bold text-gold">{m.year}</span>
+            <p class="text-slate-400 text-base leading-relaxed">{m.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LEADERSHIP GRID ============ -->
+  <section class="bg-blue-bg px-8 py-24">
+    <div class="max-w-container mx-auto">
+      <div class="text-center mb-16 flex flex-col items-center gap-4">
+        <span class="font-work-sans font-semibold text-navy text-sm uppercase tracking-[2.8px]">Leadership</span>
+        <h2 class="font-newsreader italic text-5xl text-navy">The Academicians Behind Our Success</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {leaders.map((leader) => (
+          <div class="bg-white rounded-lg overflow-hidden shadow-md group">
+            <div class="aspect-[3/4] overflow-hidden">
+              <img
+                src={leader.image}
+                alt={leader.name}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div class="p-6 flex flex-col gap-2">
+              <h3 class="font-newsreader italic text-xl text-navy">{leader.name}</h3>
+              <span class="font-work-sans font-semibold text-gold-dark text-xs uppercase tracking-wider">{leader.role}</span>
+              <p class="text-text-secondary text-sm leading-relaxed mt-2">{leader.bio}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VALUES ============ -->
+  <section class="bg-white px-8 py-24">
+    <div class="max-w-container mx-auto">
+      <div class="text-center mb-16 flex flex-col items-center gap-4">
+        <span class="font-work-sans font-semibold text-navy text-sm uppercase tracking-[2.8px]">Core Values</span>
+        <h2 class="font-newsreader italic text-5xl text-navy">What We Stand For</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {[
+          { title: 'Compassion', desc: 'We believe nursing is rooted in empathy. Our students learn to treat every patient with dignity, respect, and genuine care.', icon: '❤' },
+          { title: 'Excellence', desc: 'We pursue the highest standards in education, clinical training, and research — preparing graduates who lead, not follow.', icon: '★' },
+          { title: 'Integrity', desc: 'Ethical practice is non-negotiable. We instill a deep commitment to honesty, accountability, and professional responsibility.', icon: '✦' },
+        ].map((value) => (
+          <div class="bg-light-bg rounded-lg p-10 flex flex-col gap-4 text-center">
+            <div class="text-4xl mb-2">{value.icon}</div>
+            <h3 class="font-newsreader italic text-2xl text-navy">{value.title}</h3>
+            <p class="text-text-secondary text-base leading-relaxed">{value.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="relative py-20 overflow-hidden">
+    <div class="absolute inset-0 bg-[rgba(9,20,38,0.95)]"></div>
+    <div class="relative max-w-5xl mx-auto text-center flex flex-col items-center gap-8 px-8">
+      <h2 class="font-newsreader italic text-5xl text-white">Become Part of Our Legacy</h2>
+      <p class="text-text-muted text-xl max-w-2xl leading-relaxed">
+        Join a community of dedicated nursing professionals who are shaping the future of healthcare in India.
+      </p>
+      <a
+        href="/contact"
+        class="bg-gold text-gold-dark font-work-sans font-semibold text-lg px-10 py-5 rounded-md hover:bg-yellow-400 transition-colors"
+      >
+        Apply for Admission
+      </a>
+    </div>
+  </section>
+
+</BaseLayout>

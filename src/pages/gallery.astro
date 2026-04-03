@@ -1,0 +1,114 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const categories = ['All', 'Campus', 'Labs', 'Events', 'Students', 'Placements'];
+
+const photos = [
+  { src: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80', alt: 'Students in classroom', category: 'Students', span: 'col-span-2 row-span-2' },
+  { src: 'https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=600&q=80', alt: 'Simulation lab', category: 'Labs', span: '' },
+  { src: 'https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=600&q=80', alt: 'Practical training', category: 'Labs', span: '' },
+  { src: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&q=80', alt: 'Clinical session', category: 'Students', span: '' },
+  { src: 'https://images.unsplash.com/photo-1559757175-5700dde675bc?w=800&q=80', alt: 'Campus event', category: 'Events', span: 'col-span-2' },
+  { src: 'https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=600&q=80', alt: 'Campus view', category: 'Campus', span: '' },
+  { src: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&q=80', alt: 'Graduation ceremony', category: 'Events', span: '' },
+  { src: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&q=80', alt: 'Hospital placement', category: 'Placements', span: '' },
+  { src: 'https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=600&q=80', alt: 'Library', category: 'Campus', span: '' },
+  { src: 'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=800&q=80', alt: 'Anatomy lab', category: 'Labs', span: 'col-span-2' },
+  { src: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&q=80', alt: 'Computer lab', category: 'Campus', span: '' },
+  { src: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&q=80', alt: 'Seminar hall', category: 'Events', span: '' },
+];
+---
+
+<BaseLayout title="Gallery | Bharathi College of Nursing" activeNav="Gallery">
+
+  <!-- ============ HERO ============ -->
+  <section class="relative py-32 overflow-hidden">
+    <img
+      src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1920&q=80"
+      alt="Gallery"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-navy/90"></div>
+    <div class="relative max-w-container mx-auto px-8 text-center flex flex-col items-center gap-6">
+      <span class="font-work-sans font-semibold text-gold text-sm uppercase tracking-[2.8px]">Campus Life</span>
+      <h1 class="font-newsreader italic text-5xl md:text-7xl text-white leading-tight">
+        Our Gallery
+      </h1>
+      <p class="text-[#d8e3fb] text-xl max-w-2xl leading-relaxed">
+        Explore the vibrant life at Bharathi College of Nursing through our photo gallery.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ FILTER TABS ============ -->
+  <section class="bg-white border-b border-gray-200 sticky top-20 z-40">
+    <div class="max-w-container mx-auto px-8 py-4 flex items-center gap-3 overflow-x-auto">
+      {categories.map((cat, i) => (
+        <button
+          class:list={[
+            'font-work-sans font-semibold text-sm px-5 py-2 rounded-full whitespace-nowrap transition-colors',
+            i === 0
+              ? 'bg-navy text-white'
+              : 'bg-gray-100 text-text-secondary hover:bg-gray-200',
+          ]}
+          data-category={cat}
+        >
+          {cat}
+        </button>
+      ))}
+    </div>
+  </section>
+
+  <!-- ============ PHOTO GRID ============ -->
+  <section class="bg-light-bg px-8 py-16">
+    <div class="max-w-container mx-auto">
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-[250px]">
+        {photos.map((photo) => (
+          <div
+            class:list={['rounded-lg overflow-hidden shadow-md group cursor-pointer', photo.span]}
+            data-category={photo.category}
+          >
+            <img
+              src={photo.src}
+              alt={photo.alt}
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VIDEO SECTION ============ -->
+  <section class="bg-navy px-8 py-24">
+    <div class="max-w-container mx-auto text-center flex flex-col items-center gap-8">
+      <span class="font-work-sans font-semibold text-gold text-sm uppercase tracking-[2.8px]">Virtual Tour</span>
+      <h2 class="font-newsreader italic text-5xl text-white">Take a Virtual Campus Tour</h2>
+      <p class="text-slate-400 text-lg max-w-xl">
+        Can't visit in person? Experience our campus through our virtual tour video.
+      </p>
+      <div class="w-full max-w-3xl aspect-video bg-white/10 rounded-lg flex items-center justify-center border border-white/20">
+        <div class="flex flex-col items-center gap-4">
+          <div class="w-20 h-20 rounded-full bg-gold/20 flex items-center justify-center">
+            <svg class="w-8 h-8 text-gold ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <span class="text-white/60 text-sm font-work-sans">Video coming soon</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="bg-blue-bg px-8 py-20">
+    <div class="max-w-5xl mx-auto text-center flex flex-col items-center gap-8">
+      <h2 class="font-newsreader italic text-4xl text-navy">Want to See It in Person?</h2>
+      <p class="text-text-secondary text-lg max-w-xl">
+        Nothing beats an in-person experience. Schedule a campus visit today.
+      </p>
+      <a href="/contact" class="bg-navy text-white font-work-sans font-semibold text-lg px-10 py-5 rounded-md hover:bg-navy/90 transition-colors">
+        Schedule a Visit
+      </a>
+    </div>
+  </section>
+
+</BaseLayout>

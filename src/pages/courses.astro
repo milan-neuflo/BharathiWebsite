@@ -1,0 +1,224 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const courses = [
+  {
+    name: 'B.Sc Nursing',
+    duration: '4 Years',
+    type: 'Undergraduate Degree',
+    description: 'A comprehensive undergraduate program that provides foundational and advanced nursing expertise, preparing students for diverse clinical and leadership roles in healthcare.',
+    eligibility: [
+      'Passed 10+2 with Physics, Chemistry, and Biology',
+      'Minimum 45% aggregate (40% for reserved categories)',
+      'Age: 17 years as on 31st December of the admission year',
+      'Female candidates only',
+    ],
+    curriculum: [
+      'Anatomy & Physiology',
+      'Microbiology & Infection Control',
+      'Community Health Nursing',
+      'Medical-Surgical Nursing',
+      'Pediatric Nursing',
+      'Obstetrics & Gynecological Nursing',
+      'Psychiatric & Mental Health Nursing',
+      'Nursing Research & Statistics',
+    ],
+    highlights: ['INC Approved', 'RGUHS Affiliated', 'Clinical Internship', 'Hospital Placements'],
+  },
+  {
+    name: 'GNM Nursing',
+    duration: '3.5 Years',
+    type: 'Diploma Program',
+    description: 'A practice-focused diploma program in General Nursing and Midwifery, equipping students with hands-on clinical skills for immediate entry into the healthcare workforce.',
+    eligibility: [
+      'Passed 10+2 with Science stream (PCB preferred)',
+      'Minimum 40% aggregate marks',
+      'Age: 17–35 years',
+      'Female candidates only',
+    ],
+    curriculum: [
+      'Fundamentals of Nursing',
+      'First Aid & Emergency Care',
+      'Community Health & Hygiene',
+      'Medical-Surgical Nursing',
+      'Midwifery & Gynecological Nursing',
+      'Pediatric Nursing',
+      'Mental Health Nursing',
+      'Professional Ethics & Law',
+    ],
+    highlights: ['INC Approved', 'Practical Focused', 'Midwifery Training', 'Career Ready'],
+  },
+];
+
+const faqs = [
+  { q: 'When do admissions open?', a: 'Admissions typically open in May each year. Early applications are encouraged as seats are limited. Contact our admissions office for specific dates for the 2026 session.' },
+  { q: 'Is hostel accommodation available?', a: 'Yes, we provide fully furnished hostel accommodation with 24/7 security, mess facilities, and recreational areas exclusively for our female students.' },
+  { q: 'What are the clinical training facilities?', a: 'Students train at affiliated multi-specialty hospitals including Manipal Hospitals, Apollo Hospitals, and Fortis Hospital, gaining exposure to all major clinical departments.' },
+  { q: 'Are scholarships available?', a: 'We offer merit-based scholarships and government scholarship facilitation for SC/ST/OBC categories. Financial aid options are discussed during the admission counseling process.' },
+  { q: 'What is the placement record?', a: 'We maintain a 98% placement rate with graduates placed in top hospitals across Bangalore, India, and internationally in countries like UAE, Singapore, and the UK.' },
+];
+---
+
+<BaseLayout title="Courses | Bharathi College of Nursing" activeNav="Courses">
+
+  <!-- ============ HERO ============ -->
+  <section class="relative py-32 overflow-hidden">
+    <img
+      src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1920&q=80"
+      alt="Academic setting"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-navy/90"></div>
+    <div class="relative max-w-container mx-auto px-8 text-center flex flex-col items-center gap-6">
+      <span class="font-work-sans font-semibold text-gold text-sm uppercase tracking-[2.8px]">Academic Programs</span>
+      <h1 class="font-newsreader italic text-5xl md:text-7xl text-white leading-tight">
+        Your Pathway to a<br />Nursing Career
+      </h1>
+      <p class="text-[#d8e3fb] text-xl max-w-2xl leading-relaxed">
+        Choose from our INC-approved programs designed to prepare you for clinical excellence and leadership in healthcare.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ COURSE CATALOG ============ -->
+  <section class="bg-light-bg px-8 py-24">
+    <div class="max-w-container mx-auto flex flex-col gap-20">
+      {courses.map((course, idx) => (
+        <div class:list={['flex flex-col lg:flex-row gap-12 items-start', idx % 2 === 1 && 'lg:flex-row-reverse']}>
+          <!-- Course Info -->
+          <div class="flex-1 flex flex-col gap-8">
+            <div class="flex flex-col gap-4">
+              <div class="flex items-center gap-4">
+                <span class="bg-gold text-gold-dark font-work-sans font-semibold text-xs uppercase tracking-wider px-3 py-1 rounded-full">
+                  {course.type}
+                </span>
+                <span class="bg-navy/10 text-navy font-work-sans font-semibold text-xs uppercase tracking-wider px-3 py-1 rounded-full">
+                  {course.duration}
+                </span>
+              </div>
+              <h2 class="font-newsreader italic text-5xl text-navy">{course.name}</h2>
+              <p class="text-text-secondary text-lg leading-relaxed">{course.description}</p>
+            </div>
+
+            <!-- Highlights -->
+            <div class="flex flex-wrap gap-3">
+              {course.highlights.map((h) => (
+                <div class="bg-white border border-blue-border rounded-md px-4 py-2 flex items-center gap-2">
+                  <svg class="w-4 h-4 text-gold" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  <span class="font-work-sans font-semibold text-navy text-sm">{h}</span>
+                </div>
+              ))}
+            </div>
+
+            <!-- Eligibility -->
+            <div class="flex flex-col gap-4">
+              <h3 class="font-work-sans font-semibold text-navy text-sm uppercase tracking-[2.8px]">Eligibility</h3>
+              <ul class="flex flex-col gap-3">
+                {course.eligibility.map((e) => (
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-gold flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                    <span class="text-text-secondary text-base">{e}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <a
+              href="/contact"
+              class="self-start bg-navy text-white font-work-sans font-semibold text-base px-8 py-4 rounded-md hover:bg-navy/90 transition-colors"
+            >
+              Apply Now
+            </a>
+          </div>
+
+          <!-- Curriculum Card -->
+          <div class="w-full lg:w-[420px] flex-shrink-0">
+            <div class="bg-navy rounded-lg p-8 flex flex-col gap-6 sticky top-24">
+              <h3 class="font-newsreader italic text-2xl text-white">Curriculum Overview</h3>
+              <div class="w-12 h-px bg-gold"></div>
+              <ul class="flex flex-col gap-4">
+                {course.curriculum.map((item, i) => (
+                  <li class="flex items-center gap-3">
+                    <span class="font-work-sans font-semibold text-gold text-sm w-6">{String(i + 1).padStart(2, '0')}</span>
+                    <span class="text-slate-300 text-base">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- ============ ADMISSION PROCESS ============ -->
+  <section class="bg-white px-8 py-24">
+    <div class="max-w-container mx-auto">
+      <div class="text-center mb-16 flex flex-col items-center gap-4">
+        <span class="font-work-sans font-semibold text-navy text-sm uppercase tracking-[2.8px]">How to Apply</span>
+        <h2 class="font-newsreader italic text-5xl text-navy">Admission Process</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        {[
+          { step: '01', title: 'Inquire', desc: 'Fill out the inquiry form or contact our admissions office for program details.' },
+          { step: '02', title: 'Apply', desc: 'Submit your application with required documents and application fee.' },
+          { step: '03', title: 'Counseling', desc: 'Attend the admission counseling session with your parent or guardian.' },
+          { step: '04', title: 'Enroll', desc: 'Complete fee payment and documentation to secure your seat.' },
+        ].map((item) => (
+          <div class="flex flex-col gap-4 text-center">
+            <div class="mx-auto bg-gold/10 rounded-full w-20 h-20 flex items-center justify-center">
+              <span class="font-newsreader text-3xl font-bold text-gold">{item.step}</span>
+            </div>
+            <h3 class="font-newsreader italic text-xl text-navy">{item.title}</h3>
+            <p class="text-text-secondary text-sm leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="bg-blue-bg px-8 py-24">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-16 flex flex-col items-center gap-4">
+        <span class="font-work-sans font-semibold text-navy text-sm uppercase tracking-[2.8px]">FAQ</span>
+        <h2 class="font-newsreader italic text-5xl text-navy">Frequently Asked Questions</h2>
+      </div>
+
+      <div class="flex flex-col gap-4">
+        {faqs.map((faq, i) => (
+          <details class="bg-white rounded-lg shadow-sm group" open={i === 0}>
+            <summary class="cursor-pointer px-8 py-6 flex items-center justify-between font-newsreader italic text-xl text-navy list-none">
+              {faq.q}
+              <svg class="w-5 h-5 text-text-muted flex-shrink-0 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <div class="px-8 pb-6">
+              <p class="text-text-secondary text-base leading-relaxed">{faq.a}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="relative py-20 overflow-hidden">
+    <div class="absolute inset-0 bg-[rgba(9,20,38,0.95)]"></div>
+    <div class="relative max-w-5xl mx-auto text-center flex flex-col items-center gap-8 px-8">
+      <h2 class="font-newsreader italic text-5xl text-white">Ready to Begin Your Journey?</h2>
+      <p class="text-text-muted text-xl max-w-2xl leading-relaxed">
+        Applications for the 2026 Academic Session are now open. Limited seats available.
+      </p>
+      <div class="flex flex-wrap justify-center gap-6">
+        <a href="/contact" class="bg-gold text-gold-dark font-work-sans font-semibold text-lg px-10 py-5 rounded-md hover:bg-yellow-400 transition-colors">
+          Apply for Admission
+        </a>
+        <a href="#" class="bg-white text-navy font-work-sans font-semibold text-lg px-10 py-5 rounded-md hover:bg-gray-100 transition-colors">
+          Download Brochure
+        </a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
