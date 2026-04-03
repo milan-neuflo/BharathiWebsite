@@ -1,0 +1,89 @@
+---
+interface Props {
+  activeNav?: string;
+}
+const { activeNav = '' } = Astro.props;
+
+const navLinks = [
+  { label: 'Home', href: '/' },
+  { label: 'About', href: '/about' },
+  { label: 'Courses', href: '/courses' },
+  { label: 'Facilities', href: '/facilities' },
+  { label: 'Gallery', href: '/gallery' },
+];
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-white/80 shadow-sm">
+  <nav class="max-w-container mx-auto flex items-center justify-between px-8 py-4">
+    <a href="/" class="flex items-center">
+      <span class="font-newsreader text-2xl font-bold text-navy">Bharathi</span>
+      <span class="font-work-sans text-sm text-gold-dark ml-1 tracking-wide">NURSING</span>
+    </a>
+
+    <div class="hidden md:flex items-center gap-8">
+      {navLinks.map((link) => (
+        <a
+          href={link.href}
+          class:list={[
+            'text-base transition-colors',
+            activeNav === link.label
+              ? 'font-bold text-amber-500 border-b-2 border-amber-500 pb-0.5'
+              : 'font-medium text-slate-600 hover:text-navy',
+          ]}
+        >
+          {link.label}
+        </a>
+      ))}
+    </div>
+
+    <a
+      href="/contact"
+      class="hidden md:inline-flex bg-navy text-white font-work-sans font-semibold text-base px-6 py-2.5 rounded-md hover:bg-navy/90 transition-colors"
+    >
+      Admissions
+    </a>
+
+    <!-- Mobile menu button -->
+    <button id="mobile-menu-btn" class="md:hidden p-2" aria-label="Toggle menu">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden md:hidden border-t border-gray-100 bg-white/95 backdrop-blur-md">
+    <div class="px-8 py-4 flex flex-col gap-4">
+      {navLinks.map((link) => (
+        <a
+          href={link.href}
+          class:list={[
+            'text-base transition-colors',
+            activeNav === link.label
+              ? 'font-bold text-amber-500'
+              : 'font-medium text-slate-600',
+          ]}
+        >
+          {link.label}
+        </a>
+      ))}
+      <a
+        href="/contact"
+        class="bg-navy text-white font-work-sans font-semibold text-base px-6 py-2.5 rounded-md text-center"
+      >
+        Admissions
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- Spacer for fixed header -->
+<div class="h-20"></div>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  btn?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+  });
+</script>

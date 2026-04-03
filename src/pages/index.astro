@@ -1,0 +1,295 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Bharathi College of Nursing | Excellence in Healthcare Education" activeNav="Home">
+
+  <!-- ============ HERO SECTION ============ -->
+  <section class="relative min-h-[90vh] flex items-center overflow-hidden">
+    <!-- Background Image -->
+    <img
+      src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=1920&q=80"
+      alt="Nursing students"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+    <!-- Gradient Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-r from-[rgba(9,20,38,0.95)] via-[rgba(9,20,38,0.4)] to-transparent"></div>
+
+    <div class="relative max-w-container mx-auto px-8 md:px-14 grid grid-cols-1 md:grid-cols-2 gap-12 w-full">
+      <div class="flex flex-col gap-8 justify-center py-20">
+        <!-- Badge -->
+        <div class="inline-flex self-start">
+          <span class="bg-gold text-gold-dark font-work-sans font-semibold text-sm uppercase tracking-wider px-4 py-1.5 rounded-xl">
+            Accredited Leadership in Nursing
+          </span>
+        </div>
+
+        <!-- Heading -->
+        <h1 class="font-newsreader text-6xl md:text-8xl lg:text-[96px] leading-none text-white">
+          <span class="italic">Excellence in</span><br />
+          <span class="font-bold text-gold">Healthcare</span><br />
+          <span class="italic">Education.</span>
+        </h1>
+
+        <!-- Subheading -->
+        <p class="text-[#d8e3fb] text-xl leading-relaxed max-w-xl">
+          Empowering students to become compassionate, skilled, and visionary nursing professionals in the heart of Bangalore's medical hub.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-wrap gap-4">
+          <a
+            href="/contact"
+            class="bg-gold text-gold-dark font-work-sans font-semibold text-lg px-8 py-4 rounded-md hover:bg-yellow-400 transition-colors"
+          >
+            Apply for Admission
+          </a>
+          <a
+            href="/courses"
+            class="backdrop-blur-md bg-white/10 border border-white/20 text-white font-work-sans font-semibold text-lg px-8 py-4 rounded-md hover:bg-white/20 transition-colors"
+          >
+            Explore Courses
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURE BENTO GRID ============ -->
+  <section class="bg-light-bg px-8 py-24">
+    <div class="max-w-container mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6">
+      <!-- Large Feature: Simulation Labs -->
+      <div class="lg:col-span-8 relative rounded-lg overflow-hidden min-h-[500px] lg:min-h-[600px] group">
+        <img
+          src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=1200&q=80"
+          alt="Clinical simulation lab"
+          class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-10 flex flex-col gap-4">
+          <span class="font-work-sans font-semibold text-gold text-sm uppercase tracking-[1.4px]">Modern Facilities</span>
+          <h3 class="font-newsreader italic text-4xl text-white">World-Class Simulation Labs</h3>
+          <p class="text-white/80 text-base max-w-lg leading-relaxed">
+            Experience hands-on training with cutting-edge medical technology that mirrors real-world clinical environments in India's best hospitals.
+          </p>
+          <a href="/facilities" class="flex items-center gap-2 text-white font-bold hover:text-gold transition-colors">
+            Discover Our Campus
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Column: 2 Small Features -->
+      <div class="lg:col-span-4 flex flex-col gap-6">
+        <!-- Expert Faculty -->
+        <div class="bg-navy rounded-lg p-10 flex flex-col justify-between flex-1 relative overflow-hidden">
+          <div class="absolute -bottom-4 -right-4 w-28 h-24 opacity-20">
+            <svg viewBox="0 0 120 96" fill="none"><circle cx="60" cy="48" r="40" stroke="#fed400" stroke-width="2"/></svg>
+          </div>
+          <div class="flex flex-col gap-4">
+            <span class="font-work-sans font-semibold text-gold text-xs uppercase tracking-widest">Global Standards</span>
+            <h3 class="font-newsreader italic text-3xl text-white">Expert Faculty</h3>
+          </div>
+          <p class="text-text-muted text-base leading-relaxed mt-6">
+            Learn from distinguished nursing leaders and clinical specialists with deep roots in South Indian healthcare.
+          </p>
+        </div>
+
+        <!-- Placement Support -->
+        <div class="bg-blue-light rounded-lg p-10 flex flex-col justify-between flex-1">
+          <div class="flex flex-col gap-4">
+            <span class="font-work-sans font-semibold text-navy text-xs uppercase tracking-widest">Career Launchpad</span>
+            <h3 class="font-newsreader italic text-3xl text-navy">Placement Support</h3>
+          </div>
+          <p class="text-text-secondary text-base leading-relaxed mt-6">
+            Strategic partnerships with Bangalore's leading multi-specialty hospitals for guaranteed career paths.
+          </p>
+          <a href="#" class="flex items-center gap-2 text-navy font-bold mt-4 hover:text-navy/70 transition-colors">
+            Our Partners
+            <svg class="w-5 h-3" viewBox="0 0 20 12" fill="none"><path d="M1 6h18M13 1l6 5-6 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ACADEMIC EXCELLENCE ============ -->
+  <section class="bg-blue-bg px-8 py-24 overflow-hidden">
+    <div class="max-w-container mx-auto flex flex-col lg:flex-row items-center gap-20">
+      <!-- Tilted Photo -->
+      <div class="flex-shrink-0 flex items-center justify-center w-full lg:w-auto">
+        <div class="-rotate-2 bg-white border-[12px] border-white rounded shadow-2xl overflow-hidden max-w-[568px]">
+          <img
+            src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80"
+            alt="Nursing students in classroom"
+            class="w-full h-auto object-cover"
+          />
+        </div>
+      </div>
+
+      <!-- Text Content -->
+      <div class="flex flex-col gap-8 max-w-[568px]">
+        <h2 class="font-newsreader italic text-5xl md:text-6xl text-navy leading-tight">
+          A Legacy of<br />Academic Leadership
+        </h2>
+
+        <div class="flex flex-col gap-6">
+          <p class="text-text-secondary text-lg leading-relaxed">
+            Founded on the principles of compassion and excellence, Bharathi College of Nursing has been at the forefront of healthcare education in Bangalore for over two decades.
+          </p>
+          <p class="text-text-secondary text-lg leading-relaxed">
+            Dedicated exclusively to empowering female students, our curriculum is meticulously designed to exceed INC standards, integrating evidence-based practice with advanced technological proficiency.
+          </p>
+        </div>
+
+        <!-- Placement Partners -->
+        <div class="border-t border-gray-300/30 pt-8 flex flex-col gap-6">
+          <h4 class="font-work-sans font-semibold text-navy text-sm uppercase tracking-[2.8px]">
+            Our Placement Partners
+          </h4>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {['Manipal Hospitals', 'Apollo Hospitals', 'Fortis Hospital', 'Narayana Health', 'Aster CMI Hospital', "St. John's Medical College", 'Columbia Asia', 'Sakra World Hospital'].map((partner) => (
+              <div class="bg-white border border-blue-border rounded-sm px-3 py-3 flex items-center justify-center">
+                <span class="font-bold text-text-secondary text-[10px] uppercase tracking-tight text-center">
+                  {partner}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div class="pt-6">
+          <a href="/about" class="flex items-center gap-3 group">
+            <div class="w-12 h-px bg-navy group-hover:w-16 transition-all"></div>
+            <span class="font-bold text-navy text-base">LEARN MORE ABOUT OUR VISION</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COURSES & ADMISSIONS ============ -->
+  <section class="bg-white px-8 py-24">
+    <div class="max-w-container mx-auto flex flex-col gap-16">
+      <!-- Section Header -->
+      <div class="text-center flex flex-col items-center gap-4">
+        <span class="font-work-sans font-semibold text-navy text-sm uppercase tracking-[2.8px]">Our Programs</span>
+        <h2 class="font-newsreader italic text-5xl text-navy">Pathway to Your Medical Career</h2>
+      </div>
+
+      <!-- Course Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- B.Sc Nursing -->
+        <div class="bg-light-bg rounded-lg p-10 flex flex-col gap-6">
+          <div class="bg-blue-light rounded-xl w-16 h-16 flex items-center justify-center">
+            <svg class="w-7 h-7 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+          </div>
+          <h3 class="font-newsreader italic text-2xl text-navy">B.Sc Nursing</h3>
+          <p class="text-text-secondary text-base leading-relaxed">
+            A comprehensive 4-year undergraduate program providing foundational and advanced nursing expertise.
+          </p>
+          <ul class="flex flex-col gap-3">
+            {['4 Year Duration', 'Clinical Internship', 'INC Certified'].map((item) => (
+              <li class="flex items-center gap-2">
+                <svg class="w-2.5 h-2.5 text-gold flex-shrink-0" viewBox="0 0 10 10"><circle cx="5" cy="5" r="5" fill="currentColor"/></svg>
+                <span class="font-work-sans text-text-secondary text-sm">{item}</span>
+              </li>
+            ))}
+          </ul>
+          <a
+            href="/courses"
+            class="mt-auto border border-gray-500 text-navy font-bold text-base text-center py-4 hover:bg-navy hover:text-white transition-colors"
+          >
+            VIEW CURRICULUM
+          </a>
+        </div>
+
+        <!-- GNM Nursing -->
+        <div class="bg-light-bg rounded-lg p-10 flex flex-col gap-6">
+          <div class="bg-blue-light rounded-xl w-16 h-16 flex items-center justify-center">
+            <svg class="w-7 h-7 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5"/></svg>
+          </div>
+          <h3 class="font-newsreader italic text-2xl text-navy">GNM Nursing</h3>
+          <p class="text-text-secondary text-base leading-relaxed">
+            3.5-year diploma focusing on General Nursing and Midwifery for diverse clinical roles.
+          </p>
+          <ul class="flex flex-col gap-3">
+            {['3.5 Year Duration', 'Practical Focused', 'Career Focused'].map((item) => (
+              <li class="flex items-center gap-2">
+                <svg class="w-2.5 h-2.5 text-gold flex-shrink-0" viewBox="0 0 10 10"><circle cx="5" cy="5" r="5" fill="currentColor"/></svg>
+                <span class="font-work-sans text-text-secondary text-sm">{item}</span>
+              </li>
+            ))}
+          </ul>
+          <a
+            href="/courses"
+            class="mt-auto border border-gray-500 text-navy font-bold text-base text-center py-4 hover:bg-navy hover:text-white transition-colors"
+          >
+            VIEW CURRICULUM
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ADMISSION CTA ============ -->
+  <section class="relative py-20 overflow-hidden">
+    <div class="absolute inset-0 bg-[rgba(9,20,38,0.95)]"></div>
+    <div class="relative max-w-5xl mx-auto text-center flex flex-col items-center gap-8 px-8">
+      <h2 class="font-newsreader italic text-5xl text-white">Join the Vanguard of Healthcare</h2>
+      <p class="text-text-muted text-xl text-center max-w-2xl leading-relaxed">
+        Applications for the 2026 Academic Session are now open.<br />
+        Secure your future in one of the world's most noble professions.
+      </p>
+      <div class="flex flex-wrap justify-center gap-6 pt-4">
+        <a
+          href="#"
+          class="bg-gold text-gold-dark font-work-sans font-semibold text-lg px-10 py-5 rounded-md hover:bg-yellow-400 transition-colors"
+        >
+          Download Prospectus
+        </a>
+        <a
+          href="/contact"
+          class="bg-white text-navy font-work-sans font-semibold text-lg px-10 py-5 rounded-md hover:bg-gray-100 transition-colors"
+        >
+          Inquire Now
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ INSTAGRAM SECTION ============ -->
+  <section class="bg-blue-bg py-24 overflow-hidden">
+    <div class="max-w-container mx-auto px-8">
+      <div class="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6 mb-12">
+        <div class="flex flex-col gap-4">
+          <span class="font-work-sans font-semibold text-navy text-sm uppercase tracking-[2.8px]">Follow Us</span>
+          <h2 class="font-newsreader italic text-5xl text-navy">Connect on Instagram</h2>
+        </div>
+        <a href="#" class="flex items-center gap-2 font-bold text-navy hover:text-navy/70 transition-colors">
+          @bharathinursing
+          <svg class="w-[18px] h-[18px]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
+        {[
+          'https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&q=80',
+          'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=400&q=80',
+          'https://images.unsplash.com/photo-1559757175-5700dde675bc?w=400&q=80',
+          'https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=400&q=80',
+          'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&q=80',
+        ].map((src, i) => (
+          <div class="rounded-lg overflow-hidden shadow-lg aspect-square group">
+            <img
+              src={src}
+              alt={`Instagram post ${i + 1}`}
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
