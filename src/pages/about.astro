@@ -4,9 +4,9 @@ const base = import.meta.env.BASE_URL;
 
 const leaders = [
   {
-    name: 'Dr. Lakshmi Devi',
-    role: 'Principal & Director of Nursing',
-    bio: 'Ph.D. in Nursing Education with over 25 years of experience in academic leadership and clinical practice across South India.',
+    name: 'Alicekutty G',
+    role: 'Principal',
+    bio: 'A distinguished educator with decades of experience in nursing education and academic leadership. Committed to nurturing compassionate and skilled healthcare professionals.',
     image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&q=80',
   },
   {
@@ -26,6 +26,51 @@ const leaders = [
     role: 'Head of Student Affairs',
     bio: 'Dedicated to holistic student development with a focus on mentorship, career guidance, and emotional well-being.',
     image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80',
+  },
+];
+
+const rankHolders = [
+  {
+    name: 'Student Name 1',
+    rank: '1st Rank',
+    year: 'B.Sc Nursing — 2024',
+    achievement: 'University Topper',
+    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80',
+  },
+  {
+    name: 'Student Name 2',
+    rank: '2nd Rank',
+    year: 'B.Sc Nursing — 2024',
+    achievement: 'Distinction in Medical-Surgical Nursing',
+    image: 'https://images.unsplash.com/photo-1554151228-14d9def656e4?w=400&q=80',
+  },
+  {
+    name: 'Student Name 3',
+    rank: '3rd Rank',
+    year: 'GNM — 2024',
+    achievement: 'Distinction in Community Health Nursing',
+    image: 'https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?w=400&q=80',
+  },
+  {
+    name: 'Student Name 4',
+    rank: 'Distinction',
+    year: 'B.Sc Nursing — 2023',
+    achievement: 'Excellence in Pediatric Nursing',
+    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80',
+  },
+  {
+    name: 'Student Name 5',
+    rank: 'Distinction',
+    year: 'GNM — 2023',
+    achievement: 'Best Clinical Performance',
+    image: 'https://images.unsplash.com/photo-1554151228-14d9def656e4?w=400&q=80',
+  },
+  {
+    name: 'Student Name 6',
+    rank: 'Distinction',
+    year: 'B.Sc Nursing — 2023',
+    achievement: 'Excellence in Midwifery',
+    image: 'https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?w=400&q=80',
   },
 ];
 
@@ -173,8 +218,44 @@ const milestones = [
     </div>
   </section>
 
-  <!-- ============ VALUES ============ -->
+  <!-- ============ RANK HOLDERS & DISTINCTION STUDENTS ============ -->
   <section class="bg-white px-8 py-24">
+    <div class="max-w-container mx-auto">
+      <div class="text-center mb-16 flex flex-col items-center gap-4">
+        <span class="font-work-sans font-semibold text-gold-dark text-sm uppercase tracking-[2.8px]">Student Achievements</span>
+        <h2 class="font-newsreader italic text-5xl text-navy">Rank Holders & Distinction Students</h2>
+        <p class="text-text-secondary text-lg max-w-2xl mt-2">
+          Celebrating our top-performing students whose dedication and excellence have set benchmarks in nursing education.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {rankHolders.map((student) => (
+          <div class="bg-light-bg rounded-lg overflow-hidden shadow-md group relative">
+            <!-- Rank Badge -->
+            <div class="absolute top-4 right-4 z-10 bg-gold text-gold-dark font-work-sans font-bold text-xs uppercase tracking-wider px-3 py-1.5 rounded-full shadow-md">
+              {student.rank}
+            </div>
+            <div class="aspect-[4/5] overflow-hidden">
+              <img
+                src={student.image}
+                alt={student.name}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div class="p-6 flex flex-col gap-2">
+              <h3 class="font-newsreader italic text-xl text-navy">{student.name}</h3>
+              <span class="font-work-sans font-semibold text-gold-dark text-xs uppercase tracking-wider">{student.year}</span>
+              <p class="text-text-secondary text-sm leading-relaxed mt-2">{student.achievement}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VALUES ============ -->
+  <section class="bg-blue-bg px-8 py-24">
     <div class="max-w-container mx-auto">
       <div class="text-center mb-16 flex flex-col items-center gap-4">
         <span class="font-work-sans font-semibold text-navy text-sm uppercase tracking-[2.8px]">Core Values</span>

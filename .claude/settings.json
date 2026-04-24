@@ -27,7 +27,8 @@
       "Bash(gh auth:*)",
       "Bash(gh repo:*)",
       "Bash(gh api:*)",
-      "Bash(gh run:*)"
+      "Bash(gh run:*)",
+      "WebFetch(domain:milan-neuflo.github.io)"
     ]
   }
 }
