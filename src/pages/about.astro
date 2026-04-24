@@ -4,28 +4,10 @@ const base = import.meta.env.BASE_URL;
 
 const leaders = [
   {
-    name: 'Alicekutty G',
+    name: 'Sr. Alicekutty G',
     role: 'Principal',
-    bio: 'A distinguished educator with decades of experience in nursing education and academic leadership. Committed to nurturing compassionate and skilled healthcare professionals.',
+    bio: 'Principal of Bharathi School and College of Nursing. A distinguished educator with decades of experience in nursing education and academic leadership — committed to nurturing compassionate and skilled healthcare professionals.',
     image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&q=80',
-  },
-  {
-    name: 'Dr. Priya Sharma',
-    role: 'Vice Principal & Head of Research',
-    bio: 'Specializes in community health nursing with published research in leading international healthcare journals.',
-    image: 'https://images.unsplash.com/photo-1594824476967-48c8b964ac31?w=400&q=80',
-  },
-  {
-    name: 'Prof. Meena Krishnan',
-    role: 'Head of Clinical Training',
-    bio: 'Former Chief Nursing Officer at Manipal Hospitals with expertise in simulation-based learning methodologies.',
-    image: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=400&q=80',
-  },
-  {
-    name: 'Dr. Anitha Raj',
-    role: 'Head of Student Affairs',
-    bio: 'Dedicated to holistic student development with a focus on mentorship, career guidance, and emotional well-being.',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80',
   },
 ];
 
@@ -76,18 +58,20 @@ const rankHolders = [
 
 const stats = [
   { value: '25+', label: 'Years of Excellence' },
-  { value: '5000+', label: 'Alumni Network' },
+  { value: '1000+', label: 'Alumni Network' },
   { value: '98%', label: 'Placement Rate' },
   { value: '50+', label: 'Hospital Partners' },
 ];
 
 const milestones = [
-  { year: '1998', text: 'Founded as one of the first private nursing colleges in Bangalore' },
-  { year: '2004', text: 'Received permanent affiliation from Rajiv Gandhi University of Health Sciences' },
-  { year: '2010', text: 'Launched state-of-the-art simulation lab — first of its kind in Karnataka' },
-  { year: '2015', text: 'Established international exchange program with nursing schools in Singapore and UK' },
-  { year: '2020', text: 'Achieved "A" grade accreditation from NAAC' },
-  { year: '2024', text: 'Expanded campus with a new digital learning center and hostel facility' },
+  { year: '1998', text: 'First batch of GNM — our journey in nursing education begins' },
+  { year: '2003', text: 'First batch of B.Sc Nursing launched' },
+  { year: '2007', text: 'First batch of M.Sc Nursing introduced' },
+  { year: '2010', text: 'First batch of Post Basic B.Sc Nursing' },
+  { year: '2020', text: 'Established our own Theory and Practical Examination Center' },
+  { year: '2023', text: 'Launched Digital Evaluation Center' },
+  { year: '2023', text: 'Introduced Foreign Language program for students' },
+  { year: '2026', text: 'PhD Center inaugurated — advancing nursing research' },
 ];
 ---
 
@@ -189,32 +173,31 @@ const milestones = [
     </div>
   </section>
 
-  <!-- ============ LEADERSHIP GRID ============ -->
+  <!-- ============ PRINCIPAL'S MESSAGE ============ -->
   <section class="bg-blue-bg px-8 py-24">
     <div class="max-w-container mx-auto">
       <div class="text-center mb-16 flex flex-col items-center gap-4">
         <span class="font-work-sans font-semibold text-navy text-sm uppercase tracking-[2.8px]">Leadership</span>
-        <h2 class="font-newsreader italic text-5xl text-navy">The Academicians Behind Our Success</h2>
+        <h2 class="font-newsreader italic text-5xl text-navy">From the Principal's Desk</h2>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        {leaders.map((leader) => (
-          <div class="bg-white rounded-lg overflow-hidden shadow-md group">
-            <div class="aspect-[3/4] overflow-hidden">
-              <img
-                src={leader.image}
-                alt={leader.name}
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-            <div class="p-6 flex flex-col gap-2">
-              <h3 class="font-newsreader italic text-xl text-navy">{leader.name}</h3>
-              <span class="font-work-sans font-semibold text-gold-dark text-xs uppercase tracking-wider">{leader.role}</span>
-              <p class="text-text-secondary text-sm leading-relaxed mt-2">{leader.bio}</p>
-            </div>
+      {leaders.map((leader) => (
+        <div class="max-w-4xl mx-auto bg-white rounded-lg overflow-hidden shadow-lg flex flex-col md:flex-row">
+          <div class="md:w-2/5 aspect-[3/4] md:aspect-auto overflow-hidden">
+            <img
+              src={leader.image}
+              alt={leader.name}
+              class="w-full h-full object-cover"
+            />
           </div>
-        ))}
-      </div>
+          <div class="md:w-3/5 p-10 flex flex-col justify-center gap-4">
+            <span class="font-work-sans font-semibold text-gold-dark text-xs uppercase tracking-widest">{leader.role}</span>
+            <h3 class="font-newsreader italic text-3xl text-navy">{leader.name}</h3>
+            <div class="w-12 h-px bg-gold my-2"></div>
+            <p class="text-text-secondary text-base leading-relaxed">{leader.bio}</p>
+          </div>
+        </div>
+      ))}
     </div>
   </section>
 

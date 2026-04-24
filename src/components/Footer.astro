@@ -2,9 +2,10 @@
 const base = import.meta.env.BASE_URL;
 
 const programLinks = [
-  { label: 'B.Sc Nursing', href: `${base}/courses` },
-  { label: 'GNM Nursing', href: `${base}/courses` },
-  { label: 'Bridge Courses', href: `${base}/courses` },
+  { label: 'B.Sc Nursing', href: `${base}/courses#bsc` },
+  { label: 'GNM Nursing', href: `${base}/courses#gnm` },
+  { label: 'Post Basic B.Sc', href: `${base}/courses#pbbsc` },
+  { label: 'M.Sc Nursing', href: `${base}/courses#msc` },
 ];
 
 const quickLinks = [
@@ -20,9 +21,12 @@ const quickLinks = [
   <div class="max-w-container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 px-12 pt-16 pb-16 border-b border-[#1e293b]">
     <!-- Column 1: Logo & Description -->
     <div class="flex flex-col gap-6">
-      <div>
-        <span class="font-newsreader text-2xl font-bold text-white">Bharathi</span>
-        <span class="font-work-sans text-sm text-gold ml-1 tracking-wide">NURSING</span>
+      <div class="bg-white rounded-md p-3 inline-flex self-start">
+        <img
+          src={`${base}/images/logo.png`}
+          alt="Bharathi College of Nursing"
+          class="h-12 w-auto"
+        />
       </div>
       <p class="text-slate-400 text-sm leading-relaxed">
         Pioneering nursing education in Bangalore with a commitment to producing compassionate healthcare leaders since 1998. Exclusively for female students.

@@ -4,6 +4,7 @@ const base = import.meta.env.BASE_URL;
 
 const courses = [
   {
+    id: 'bsc',
     name: 'B.Sc Nursing',
     duration: '4 Years',
     type: 'Undergraduate Degree',
@@ -14,40 +15,189 @@ const courses = [
       'Age: 17 years as on 31st December of the admission year',
       'Female candidates only',
     ],
-    curriculum: [
-      'Anatomy & Physiology',
-      'Microbiology & Infection Control',
-      'Community Health Nursing',
-      'Medical-Surgical Nursing',
-      'Pediatric Nursing',
-      'Obstetrics & Gynecological Nursing',
-      'Psychiatric & Mental Health Nursing',
-      'Nursing Research & Statistics',
-    ],
     highlights: ['INC Approved', 'RGUHS Affiliated', 'Clinical Internship', 'Hospital Placements'],
+    structure: 'semester',
+    curriculum: [
+      {
+        period: 'Semester I',
+        subjects: [
+          'Communicative English',
+          'Applied Anatomy & Applied Physiology',
+          'Applied Sociology & Applied Psychology',
+          'Nursing Foundation I',
+        ],
+      },
+      {
+        period: 'Semester II',
+        subjects: [
+          'Applied Biochemistry and Applied Nutrition & Dietetics',
+          'Nursing Foundation II',
+          'Health / Nursing Informatics & Technology',
+        ],
+      },
+      {
+        period: 'Semester III',
+        subjects: [
+          'Applied Microbiology and Infection Control including Safety',
+          'Pharmacology I and Pathology I',
+          'Adult Health Nursing I',
+        ],
+      },
+      {
+        period: 'Semester IV',
+        subjects: [
+          'Pharmacology & Pathology (I & II) & Genetics',
+          'Adult Health Nursing II',
+          'Professionalism, Ethics & Professional Values',
+        ],
+      },
+      {
+        period: 'Semester V',
+        subjects: [
+          'Child Health Nursing I',
+          'Mental Health Nursing I',
+          'Community Health Nursing I (including Environmental Science & Epidemiology)',
+          'Educational Technology / Nursing Education',
+          'Introduction to Forensic Nursing and Indian Laws',
+        ],
+      },
+      {
+        period: 'Semester VI',
+        subjects: [
+          'Child Health Nursing II',
+          'Mental Health Nursing II',
+          'Nursing Management & Leadership',
+          'Midwifery / Obstetrics and Gynecology I',
+        ],
+      },
+      {
+        period: 'Semester VII',
+        subjects: [
+          'Community Health Nursing II',
+          'Midwifery / Obstetrics and Gynecology II',
+          'Nursing Research & Statistics',
+        ],
+      },
+      {
+        period: 'Semester VIII',
+        subjects: [
+          'Internship (Integrated Clinical Practice)',
+          'Professional Project & Dissertation',
+        ],
+      },
+    ],
   },
   {
+    id: 'gnm',
     name: 'GNM Nursing',
-    duration: '3.5 Years',
+    duration: '3 Years',
     type: 'Diploma Program',
-    description: 'A practice-focused diploma program in General Nursing and Midwifery, equipping students with hands-on clinical skills for immediate entry into the healthcare workforce.',
+    description: 'A practice-focused diploma program in General Nursing and Midwifery, equipping students with hands-on clinical skills for immediate entry into the healthcare workforce. Structured into 3 years with integrated internship.',
     eligibility: [
       'Passed 10+2 with Science stream (PCB preferred)',
       'Minimum 40% aggregate marks',
       'Age: 17–35 years',
       'Female candidates only',
     ],
-    curriculum: [
-      'Fundamentals of Nursing',
-      'First Aid & Emergency Care',
-      'Community Health & Hygiene',
-      'Medical-Surgical Nursing',
-      'Midwifery & Gynecological Nursing',
-      'Pediatric Nursing',
-      'Mental Health Nursing',
-      'Professional Ethics & Law',
-    ],
     highlights: ['INC Approved', 'Practical Focused', 'Midwifery Training', 'Career Ready'],
+    structure: 'year',
+    curriculum: [
+      {
+        period: '1st Year',
+        subjects: [
+          'Bio-Sciences: Anatomy, Physiology & Microbiology',
+          'Behavioral Sciences: Psychology & Sociology',
+          'Nursing Foundations',
+          'Community Health Nursing I',
+          'English and Computer Education',
+        ],
+      },
+      {
+        period: '2nd Year',
+        subjects: [
+          'Medical Surgical Nursing I',
+          'Medical Surgical Nursing II',
+          'Mental Health Nursing',
+          'Child Health Nursing',
+        ],
+      },
+      {
+        period: '3rd Year',
+        subjects: [
+          'Midwifery and Gynaecological Nursing',
+          'Community Health Nursing II',
+          'Pediatric Nursing',
+          'Internship / Professional Trends',
+        ],
+      },
+    ],
+  },
+  {
+    id: 'pbbsc',
+    name: 'Post Basic B.Sc Nursing',
+    duration: '2 Years',
+    type: 'Degree Program',
+    description: 'A 2-year degree program designed for registered GNM nurses to upgrade their qualification to a B.Sc level, expanding their knowledge in advanced nursing, education, and administration.',
+    eligibility: [
+      'Diploma in General Nursing & Midwifery (GNM)',
+      'Registered Nurse & Midwife (RNRM) with a State Nursing Council',
+      'Minimum 1 year of clinical experience preferred',
+      'Female candidates only',
+    ],
+    highlights: ['INC Approved', 'For GNM Graduates', 'Career Advancement', 'Leadership Focus'],
+    structure: 'year',
+    curriculum: [
+      {
+        period: '1st Year',
+        subjects: [
+          'Nursing Foundation',
+          'Nutrition & Dietetics',
+          'Biochemistry & Biophysics',
+          'Psychology',
+          'Maternal Nursing',
+          'Child Health Nursing',
+          'Microbiology',
+          'Medical & Surgical Nursing',
+        ],
+      },
+      {
+        period: '2nd Year',
+        subjects: [
+          'Sociology',
+          'Community Health Nursing',
+          'Mental Health Nursing',
+          'Introduction to Nursing Education',
+          'Introduction to Nursing Administration',
+        ],
+      },
+    ],
+  },
+  {
+    id: 'msc',
+    name: 'M.Sc Nursing',
+    duration: '2 Years',
+    type: 'Postgraduate Degree',
+    description: 'A postgraduate program offering specialisation in key areas of nursing, preparing graduates for advanced clinical practice, teaching, research, and leadership roles.',
+    eligibility: [
+      'B.Sc Nursing / Post Basic B.Sc Nursing from an INC-recognized institution',
+      'Minimum 55% aggregate marks',
+      'Registered Nurse with a State Nursing Council',
+      '1 year of clinical experience preferred',
+    ],
+    highlights: ['INC Approved', '5 Specialisations', 'Research Focused', 'Dissertation'],
+    structure: 'specialisations',
+    curriculum: [
+      {
+        period: 'Specialisations Offered',
+        subjects: [
+          'Medical-Surgical Nursing',
+          'Paediatric Nursing',
+          'Psychiatric Nursing',
+          'Obstetrics & Gynaecological Nursing',
+          'Community Health Nursing',
+        ],
+      },
+    ],
   },
 ];
 
@@ -81,15 +231,29 @@ const faqs = [
     </div>
   </section>
 
+  <!-- ============ PROGRAM QUICK NAV ============ -->
+  <section class="bg-white border-b border-gray-200 sticky top-20 z-40">
+    <div class="max-w-container mx-auto px-8 py-4 flex items-center gap-3 overflow-x-auto">
+      {courses.map((c) => (
+        <a
+          href={`#${c.id}`}
+          class="font-work-sans font-semibold text-sm px-5 py-2 rounded-full whitespace-nowrap transition-colors bg-gray-100 text-text-secondary hover:bg-navy hover:text-white"
+        >
+          {c.name}
+        </a>
+      ))}
+    </div>
+  </section>
+
   <!-- ============ COURSE CATALOG ============ -->
   <section class="bg-light-bg px-8 py-24">
-    <div class="max-w-container mx-auto flex flex-col gap-20">
+    <div class="max-w-container mx-auto flex flex-col gap-32">
       {courses.map((course, idx) => (
-        <div class:list={['flex flex-col lg:flex-row gap-12 items-start', idx % 2 === 1 && 'lg:flex-row-reverse']}>
-          <!-- Course Info -->
-          <div class="flex-1 flex flex-col gap-8">
-            <div class="flex flex-col gap-4">
-              <div class="flex items-center gap-4">
+        <div id={course.id} class="scroll-mt-40">
+          <!-- Course Header -->
+          <div class="flex flex-col lg:flex-row gap-8 mb-10 items-start lg:items-center">
+            <div class="flex-1 flex flex-col gap-4">
+              <div class="flex items-center gap-3 flex-wrap">
                 <span class="bg-gold text-gold-dark font-work-sans font-semibold text-xs uppercase tracking-wider px-3 py-1 rounded-full">
                   {course.type}
                 </span>
@@ -98,54 +262,88 @@ const faqs = [
                 </span>
               </div>
               <h2 class="font-newsreader italic text-5xl text-navy">{course.name}</h2>
-              <p class="text-text-secondary text-lg leading-relaxed">{course.description}</p>
+              <p class="text-text-secondary text-lg leading-relaxed max-w-3xl">{course.description}</p>
             </div>
-
-            <!-- Highlights -->
-            <div class="flex flex-wrap gap-3">
-              {course.highlights.map((h) => (
-                <div class="bg-white border border-blue-border rounded-md px-4 py-2 flex items-center gap-2">
-                  <svg class="w-4 h-4 text-gold" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                  <span class="font-work-sans font-semibold text-navy text-sm">{h}</span>
-                </div>
-              ))}
-            </div>
-
-            <!-- Eligibility -->
-            <div class="flex flex-col gap-4">
-              <h3 class="font-work-sans font-semibold text-navy text-sm uppercase tracking-[2.8px]">Eligibility</h3>
-              <ul class="flex flex-col gap-3">
-                {course.eligibility.map((e) => (
-                  <li class="flex items-start gap-3">
-                    <svg class="w-5 h-5 text-gold flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                    <span class="text-text-secondary text-base">{e}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
             <a
               href={`${base}/contact`}
-              class="self-start bg-navy text-white font-work-sans font-semibold text-base px-8 py-4 rounded-md hover:bg-navy/90 transition-colors"
+              class="bg-navy text-white font-work-sans font-semibold text-base px-8 py-4 rounded-md hover:bg-navy/90 transition-colors whitespace-nowrap"
             >
               Apply Now
             </a>
           </div>
 
-          <!-- Curriculum Card -->
-          <div class="w-full lg:w-[420px] flex-shrink-0">
-            <div class="bg-navy rounded-lg p-8 flex flex-col gap-6 sticky top-24">
-              <h3 class="font-newsreader italic text-2xl text-white">Curriculum Overview</h3>
-              <div class="w-12 h-px bg-gold"></div>
-              <ul class="flex flex-col gap-4">
-                {course.curriculum.map((item, i) => (
-                  <li class="flex items-center gap-3">
-                    <span class="font-work-sans font-semibold text-gold text-sm w-6">{String(i + 1).padStart(2, '0')}</span>
-                    <span class="text-slate-300 text-base">{item}</span>
-                  </li>
-                ))}
-              </ul>
+          <!-- Highlights -->
+          <div class="flex flex-wrap gap-3 mb-10">
+            {course.highlights.map((h) => (
+              <div class="bg-white border border-blue-border rounded-md px-4 py-2 flex items-center gap-2">
+                <svg class="w-4 h-4 text-gold" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                <span class="font-work-sans font-semibold text-navy text-sm">{h}</span>
+              </div>
+            ))}
+          </div>
+
+          <!-- Curriculum Section -->
+          <div class="flex flex-col gap-6">
+            <div class="flex items-center gap-4">
+              <h3 class="font-work-sans font-semibold text-navy text-sm uppercase tracking-[2.8px]">
+                {course.structure === 'specialisations' ? 'Specialisations' : 'Curriculum'}
+              </h3>
+              <div class="flex-1 h-px bg-gray-300/50"></div>
             </div>
+
+            {course.structure === 'specialisations' ? (
+              <!-- MSc: Grid of specialisations -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {course.curriculum[0].subjects.map((spec, i) => (
+                  <div class="bg-white border border-blue-border rounded-lg p-6 flex items-start gap-4 hover:border-gold transition-colors">
+                    <div class="bg-gold/15 rounded-lg w-10 h-10 flex items-center justify-center flex-shrink-0">
+                      <span class="font-newsreader font-bold text-gold-dark text-sm">{String(i + 1).padStart(2, '0')}</span>
+                    </div>
+                    <div class="flex-1">
+                      <h4 class="font-newsreader italic text-lg text-navy">{spec}</h4>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <!-- Semester/Year grid -->
+              <div class:list={[
+                'grid gap-4',
+                course.structure === 'semester' ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-2' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3',
+              ]}>
+                {course.curriculum.map((term, i) => (
+                  <div class="bg-white rounded-lg p-6 border border-blue-border hover:shadow-md transition-shadow">
+                    <div class="flex items-center justify-between mb-4 pb-3 border-b border-gray-100">
+                      <h4 class="font-newsreader italic text-2xl text-navy">{term.period}</h4>
+                      <span class="bg-navy text-white font-work-sans font-semibold text-xs px-3 py-1 rounded-full">
+                        {term.subjects.length} {term.subjects.length === 1 ? 'Module' : 'Modules'}
+                      </span>
+                    </div>
+                    <ul class="flex flex-col gap-3">
+                      {term.subjects.map((subject, j) => (
+                        <li class="flex items-start gap-3">
+                          <span class="font-work-sans font-semibold text-gold-dark text-xs w-6 flex-shrink-0 pt-1">{String(j + 1).padStart(2, '0')}</span>
+                          <span class="text-text-secondary text-sm leading-relaxed">{subject}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+
+          <!-- Eligibility -->
+          <div class="mt-12 bg-white border border-blue-border rounded-lg p-8">
+            <h3 class="font-work-sans font-semibold text-navy text-sm uppercase tracking-[2.8px] mb-6">Eligibility Criteria</h3>
+            <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {course.eligibility.map((e) => (
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-gold flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                  <span class="text-text-secondary text-base">{e}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       ))}

@@ -149,7 +149,7 @@ const base = import.meta.env.BASE_URL;
             Our Placement Partners
           </h4>
           <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {['Manipal Hospitals', 'Apollo Hospitals', 'Fortis Hospital', 'Narayana Health', 'Aster CMI Hospital', "St. John's Medical College", 'Columbia Asia', 'Sakra World Hospital'].map((partner) => (
+            {['Manipal Hospitals', 'Apollo Hospitals', 'Fortis Hospital', 'Narayana Health', 'Aster CMI Hospital', "St. John's Medical College", 'Manipal Group', 'Sakra World Hospital'].map((partner) => (
               <div class="bg-white border border-blue-border rounded-sm px-3 py-3 flex items-center justify-center">
                 <span class="font-bold text-text-secondary text-[10px] uppercase tracking-tight text-center">
                   {partner}
@@ -179,56 +179,66 @@ const base = import.meta.env.BASE_URL;
       </div>
 
       <!-- Course Cards -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <!-- B.Sc Nursing -->
-        <div class="bg-light-bg rounded-lg p-10 flex flex-col gap-6">
-          <div class="bg-blue-light rounded-xl w-16 h-16 flex items-center justify-center">
-            <svg class="w-7 h-7 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {[
+          {
+            name: 'B.Sc Nursing',
+            duration: '4 Years',
+            tag: 'Undergraduate',
+            desc: 'Comprehensive undergraduate program providing foundational and advanced nursing expertise.',
+            features: ['4 Year Duration', 'Clinical Internship', 'INC Certified'],
+            anchor: 'bsc',
+          },
+          {
+            name: 'GNM Nursing',
+            duration: '3 Years',
+            tag: 'Diploma',
+            desc: 'Practice-focused diploma in General Nursing and Midwifery for diverse clinical roles.',
+            features: ['3 Year Duration', 'Practical Focused', 'Midwifery Training'],
+            anchor: 'gnm',
+          },
+          {
+            name: 'Post Basic B.Sc',
+            duration: '2 Years',
+            tag: 'Degree',
+            desc: 'Upgrade your GNM qualification to a B.Sc level — designed for registered nurses.',
+            features: ['2 Year Duration', 'For GNM Graduates', 'Career Growth'],
+            anchor: 'pbbsc',
+          },
+          {
+            name: 'M.Sc Nursing',
+            duration: '2 Years',
+            tag: 'Postgraduate',
+            desc: 'Postgraduate specialisation across 5 key nursing areas with research focus.',
+            features: ['5 Specialisations', 'Research Focused', 'Dissertation'],
+            anchor: 'msc',
+          },
+        ].map((course) => (
+          <div class="bg-light-bg rounded-lg p-8 flex flex-col gap-5">
+            <div class="flex items-center justify-between">
+              <span class="bg-gold text-gold-dark font-work-sans font-semibold text-[10px] uppercase tracking-wider px-3 py-1 rounded-full">
+                {course.tag}
+              </span>
+              <span class="font-work-sans font-semibold text-navy text-xs">{course.duration}</span>
+            </div>
+            <h3 class="font-newsreader italic text-2xl text-navy">{course.name}</h3>
+            <p class="text-text-secondary text-sm leading-relaxed">{course.desc}</p>
+            <ul class="flex flex-col gap-2">
+              {course.features.map((item) => (
+                <li class="flex items-center gap-2">
+                  <svg class="w-2 h-2 text-gold flex-shrink-0" viewBox="0 0 10 10"><circle cx="5" cy="5" r="5" fill="currentColor"/></svg>
+                  <span class="font-work-sans text-text-secondary text-xs">{item}</span>
+                </li>
+              ))}
+            </ul>
+            <a
+              href={`${base}/courses#${course.anchor}`}
+              class="mt-auto border border-gray-500 text-navy font-bold text-sm text-center py-3 hover:bg-navy hover:text-white transition-colors"
+            >
+              VIEW CURRICULUM
+            </a>
           </div>
-          <h3 class="font-newsreader italic text-2xl text-navy">B.Sc Nursing</h3>
-          <p class="text-text-secondary text-base leading-relaxed">
-            A comprehensive 4-year undergraduate program providing foundational and advanced nursing expertise.
-          </p>
-          <ul class="flex flex-col gap-3">
-            {['4 Year Duration', 'Clinical Internship', 'INC Certified'].map((item) => (
-              <li class="flex items-center gap-2">
-                <svg class="w-2.5 h-2.5 text-gold flex-shrink-0" viewBox="0 0 10 10"><circle cx="5" cy="5" r="5" fill="currentColor"/></svg>
-                <span class="font-work-sans text-text-secondary text-sm">{item}</span>
-              </li>
-            ))}
-          </ul>
-          <a
-            href={`${base}/courses`}
-            class="mt-auto border border-gray-500 text-navy font-bold text-base text-center py-4 hover:bg-navy hover:text-white transition-colors"
-          >
-            VIEW CURRICULUM
-          </a>
-        </div>
-
-        <!-- GNM Nursing -->
-        <div class="bg-light-bg rounded-lg p-10 flex flex-col gap-6">
-          <div class="bg-blue-light rounded-xl w-16 h-16 flex items-center justify-center">
-            <svg class="w-7 h-7 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5"/></svg>
-          </div>
-          <h3 class="font-newsreader italic text-2xl text-navy">GNM Nursing</h3>
-          <p class="text-text-secondary text-base leading-relaxed">
-            3.5-year diploma focusing on General Nursing and Midwifery for diverse clinical roles.
-          </p>
-          <ul class="flex flex-col gap-3">
-            {['3.5 Year Duration', 'Practical Focused', 'Career Focused'].map((item) => (
-              <li class="flex items-center gap-2">
-                <svg class="w-2.5 h-2.5 text-gold flex-shrink-0" viewBox="0 0 10 10"><circle cx="5" cy="5" r="5" fill="currentColor"/></svg>
-                <span class="font-work-sans text-text-secondary text-sm">{item}</span>
-              </li>
-            ))}
-          </ul>
-          <a
-            href={`${base}/courses`}
-            class="mt-auto border border-gray-500 text-navy font-bold text-base text-center py-4 hover:bg-navy hover:text-white transition-colors"
-          >
-            VIEW CURRICULUM
-          </a>
-        </div>
+        ))}
       </div>
     </div>
   </section>
