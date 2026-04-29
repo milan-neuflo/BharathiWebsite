@@ -4,14 +4,14 @@ const ACCESS_KEY = '93ae7cae-df0a-4604-bb32-a8adb1f210b0';
 
 <div
   id="inquiry-popup"
-  class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/60 backdrop-blur-sm px-4"
+  class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/60 backdrop-blur-sm px-4 opacity-0 transition-opacity duration-200 ease-out data-[open=true]:opacity-100"
   role="dialog"
   aria-modal="true"
   aria-labelledby="inquiry-popup-title"
   aria-hidden="true"
 >
   <div
-    class="relative bg-white rounded-lg shadow-2xl w-full max-w-lg max-h-[92vh] overflow-y-auto"
+    class="relative bg-white rounded-lg shadow-2xl w-full max-w-lg max-h-[92vh] overflow-y-auto translate-y-4 transition-transform duration-200 ease-out data-[open=true]:translate-y-0"
     data-popup-card
   >
     <button
@@ -147,7 +147,7 @@ const ACCESS_KEY = '93ae7cae-df0a-4604-bb32-a8adb1f210b0';
 <script>
   const STORAGE_KEY = 'inquiryPopupDismissedAt';
   const SUPPRESS_DAYS = 30;
-  const SHOW_DELAY_MS = 5000;
+  const SHOW_DELAY_MS = 2500;
 
   const popup = document.getElementById('inquiry-popup');
   const card = popup?.querySelector('[data-popup-card]');
@@ -188,14 +188,22 @@ const ACCESS_KEY = '93ae7cae-df0a-4604-bb32-a8adb1f210b0';
       popup.classList.add('flex');
       popup.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';
+      requestAnimationFrame(() => {
+        popup.dataset.open = 'true';
+        if (card instanceof HTMLElement) card.dataset.open = 'true';
+      });
       const firstInput = form.querySelector<HTMLInputElement>('input[name="name"]');
-      firstInput?.focus();
+      firstInput?.focus({ preventScroll: true });
     };
 
     const close = (dismiss = true) => {
-      popup.classList.add('hidden');
-      popup.classList.remove('flex');
-      popup.setAttribute('aria-hidden', 'true');
+      delete popup.dataset.open;
+      if (card instanceof HTMLElement) delete card.dataset.open;
+      window.setTimeout(() => {
+        popup.classList.add('hidden');
+        popup.classList.remove('flex');
+        popup.setAttribute('aria-hidden', 'true');
+      }, 180);
       document.body.style.overflow = '';
       if (dismiss) recordDismissal();
       if (lastFocused instanceof HTMLElement) lastFocused.focus();
