@@ -2,21 +2,19 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
-const categories = ['All', 'Campus', 'Labs', 'Events', 'Students', 'Placements'];
-
 const photos = [
-  { src: `${base}/images/figma/job-03773.jpg`, alt: 'Students in classroom', category: 'Students', span: 'col-span-2 row-span-2' },
-  { src: `${base}/images/figma/job-05018.jpg`, alt: 'Simulation lab', category: 'Labs', span: '' },
-  { src: `${base}/images/figma/job-05142.jpg`, alt: 'Practical training', category: 'Labs', span: '' },
-  { src: `${base}/images/figma/job-04966.jpg`, alt: 'Clinical session', category: 'Students', span: '' },
-  { src: `${base}/images/figma/job-05030.jpg`, alt: 'Campus event', category: 'Events', span: 'col-span-2' },
-  { src: `${base}/images/figma/job-04250.jpg`, alt: 'Campus view', category: 'Campus', span: '' },
-  { src: `${base}/images/figma/job-04910.jpg`, alt: 'Graduation ceremony', category: 'Events', span: '' },
-  { src: `${base}/images/figma/job-04372.jpg`, alt: 'Hospital placement', category: 'Placements', span: '' },
-  { src: `${base}/images/figma/job-04866.jpg`, alt: 'Library', category: 'Campus', span: '' },
-  { src: `${base}/images/figma/job-05015.jpg`, alt: 'Anatomy lab', category: 'Labs', span: 'col-span-2' },
-  { src: `${base}/images/figma/job-04561.jpg`, alt: 'Computer lab', category: 'Campus', span: '' },
-  { src: `${base}/images/figma/job-04897.jpg`, alt: 'Seminar hall', category: 'Events', span: '' },
+  { src: `${base}/images/figma/job-03773.jpg`, alt: 'Students in classroom', span: 'col-span-2 row-span-2' },
+  { src: `${base}/images/figma/job-05018.jpg`, alt: 'Simulation lab', span: '' },
+  { src: `${base}/images/figma/job-05142.jpg`, alt: 'Practical training', span: '' },
+  { src: `${base}/images/figma/job-04966.jpg`, alt: 'Clinical session', span: '' },
+  { src: `${base}/images/figma/job-05030.jpg`, alt: 'Campus event', span: 'col-span-2' },
+  { src: `${base}/images/figma/job-04250.jpg`, alt: 'Campus view', span: '' },
+  { src: `${base}/images/figma/job-04910.jpg`, alt: 'Graduation ceremony', span: '' },
+  { src: `${base}/images/figma/job-04372.jpg`, alt: 'Hospital placement', span: '' },
+  { src: `${base}/images/figma/job-04866.jpg`, alt: 'Library', span: '' },
+  { src: `${base}/images/figma/job-05015.jpg`, alt: 'Anatomy lab', span: 'col-span-2' },
+  { src: `${base}/images/figma/job-04561.jpg`, alt: 'Computer lab', span: '' },
+  { src: `${base}/images/figma/job-04897.jpg`, alt: 'Seminar hall', span: '' },
 ];
 ---
 
@@ -41,34 +39,12 @@ const photos = [
     </div>
   </section>
 
-  <!-- ============ FILTER TABS ============ -->
-  <section class="bg-white border-b border-gray-200 sticky top-[72px] md:top-20 z-40">
-    <div class="max-w-container mx-auto px-8 py-4 flex items-center gap-3 overflow-x-auto">
-      {categories.map((cat, i) => (
-        <button
-          class:list={[
-            'font-work-sans font-semibold text-sm px-5 py-2 rounded-full whitespace-nowrap transition-colors',
-            i === 0
-              ? 'bg-navy text-white'
-              : 'bg-gray-100 text-text-secondary hover:bg-gray-200',
-          ]}
-          data-category={cat}
-        >
-          {cat}
-        </button>
-      ))}
-    </div>
-  </section>
-
   <!-- ============ PHOTO GRID ============ -->
   <section class="bg-light-bg px-8 py-16">
     <div class="max-w-container mx-auto">
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-[250px]">
         {photos.map((photo) => (
-          <div
-            class:list={['rounded-lg overflow-hidden shadow-md group cursor-pointer', photo.span]}
-            data-category={photo.category}
-          >
+          <div class:list={['rounded-lg overflow-hidden shadow-md group cursor-pointer', photo.span]}>
             <img
               src={photo.src}
               alt={photo.alt}
