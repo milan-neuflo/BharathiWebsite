@@ -9,10 +9,8 @@ const programLinks = [
 ];
 
 const quickLinks = [
-  { label: 'Privacy Policy', href: '#' },
-  { label: 'Terms of Service', href: '#' },
-  { label: 'Faculty Portal', href: '#' },
-  { label: 'Alumni Association', href: '#' },
+  { label: 'Privacy Policy', href: `${base}/privacy` },
+  { label: 'Terms of Service', href: `${base}/terms` },
   { label: 'Contact Us', href: `${base}/contact` },
 ];
 ---
@@ -86,9 +84,12 @@ const quickLinks = [
     </div>
   </div>
 
-  <div class="text-center py-8 px-12">
+  <div class="text-center py-8 px-12 flex flex-col gap-2">
     <p class="text-slate-400 text-xs uppercase tracking-widest">
-      &copy; 2024 Bharathi College of Nursing. Excellence in Healthcare Education.
+      &copy; 2026 Bharathi College of Nursing. Excellence in Healthcare Education.
+    </p>
+    <p class="text-slate-500 text-xs">
+      Developed by <a href="https://neuflo.io" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:text-amber-300 transition-colors">Neuflo.io</a>
     </p>
   </div>
 </footer>

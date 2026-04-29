@@ -1,0 +1,109 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const lastUpdated = '29 April 2026';
+---
+
+<BaseLayout title="Terms of Service | Bharathi College of Nursing" activeNav="">
+
+  <section class="relative py-24 bg-navy overflow-hidden">
+    <div class="relative max-w-container mx-auto px-8 text-center flex flex-col items-center gap-4">
+      <span class="font-work-sans font-semibold text-gold text-sm uppercase tracking-[2.8px]">Legal</span>
+      <h1 class="font-newsreader italic text-5xl md:text-6xl text-white leading-tight">Terms of Service</h1>
+      <p class="text-[#d8e3fb] text-base">Last updated: {lastUpdated}</p>
+    </div>
+  </section>
+
+  <section class="bg-light-bg px-8 py-20">
+    <div class="max-w-3xl mx-auto bg-white rounded-lg shadow-sm p-8 md:p-12 prose prose-slate prose-headings:font-newsreader prose-headings:italic prose-headings:text-navy prose-h2:text-3xl prose-h2:mt-10 prose-h2:mb-4 prose-p:text-text-secondary prose-p:leading-relaxed prose-li:text-text-secondary prose-a:text-navy prose-strong:text-navy max-w-none">
+
+      <p>
+        These Terms of Service ("Terms") govern your use of <strong>bharathinursing.com</strong>
+        (the "Site"), operated by Bharathi College of Nursing. By accessing or using the Site, you
+        agree to these Terms. If you do not agree, please do not use the Site.
+      </p>
+
+      <h2>1. Use of the Site</h2>
+      <p>You agree to use the Site only for lawful purposes. You must not:</p>
+      <ul>
+        <li>Submit false, misleading, or fraudulent information through any form on the Site.</li>
+        <li>Attempt to gain unauthorised access to the Site, its servers, or related systems.</li>
+        <li>Use the Site to transmit any virus, malware, or other harmful code.</li>
+        <li>Scrape, copy, or republish content from the Site without our written permission.</li>
+        <li>Use automated means to flood the Site with traffic or form submissions.</li>
+      </ul>
+
+      <h2>2. Admissions & Information</h2>
+      <p>
+        Information about programmes, fees, eligibility, and placements published on the Site is
+        provided in good faith for general guidance. Final terms of admission are governed by the
+        official admission letter, prospectus, and the policies of the Indian Nursing Council (INC),
+        Rajiv Gandhi University of Health Sciences (RGUHS), and the Government of Karnataka.
+        We reserve the right to update programme details without prior notice.
+      </p>
+
+      <h2>3. Intellectual Property</h2>
+      <p>
+        All content on the Site — including text, photographs, logos, graphics, and the
+        <em>Bharathi College of Nursing</em> name and marks — is the property of the College or
+        its licensors and is protected under Indian copyright and trademark law. You may not
+        reproduce, distribute, or display any of this content without our prior written consent.
+      </p>
+
+      <h2>4. User Submissions</h2>
+      <p>
+        When you submit information through an inquiry or contact form, you confirm that the
+        information is accurate and that you have the right to share it. By submitting, you grant
+        us permission to use the information to respond to your request, as detailed in our
+        <a href={`${base}/privacy`}>Privacy Policy</a>.
+      </p>
+
+      <h2>5. Third-Party Services</h2>
+      <p>
+        The Site uses third-party services such as Web3Forms (form processing), Google Maps
+        (location embed), Instagram, and YouTube. We are not responsible for the content,
+        availability, or practices of these third parties.
+      </p>
+
+      <h2>6. Disclaimer</h2>
+      <p>
+        The Site is provided on an "as is" and "as available" basis. We make no warranties,
+        express or implied, about the accuracy, reliability, or availability of the content. To
+        the maximum extent permitted by law, we disclaim all warranties, including merchantability
+        and fitness for a particular purpose.
+      </p>
+
+      <h2>7. Limitation of Liability</h2>
+      <p>
+        To the fullest extent permitted by Indian law, Bharathi College of Nursing and its
+        affiliates shall not be liable for any indirect, incidental, special, or consequential
+        damages arising out of your use of, or inability to use, the Site.
+      </p>
+
+      <h2>8. Changes to These Terms</h2>
+      <p>
+        We may revise these Terms from time to time. Updates will be reflected by the "Last
+        updated" date at the top. Continued use of the Site after any change constitutes
+        acceptance of the new Terms.
+      </p>
+
+      <h2>9. Governing Law</h2>
+      <p>
+        These Terms are governed by the laws of India. Any dispute arising out of or in connection
+        with these Terms shall be subject to the exclusive jurisdiction of the courts of Bangalore,
+        Karnataka.
+      </p>
+
+      <h2>10. Contact Us</h2>
+      <p>
+        Bharathi College of Nursing<br />
+        Veeraiah Nagar, Arasinakunte, Dasanapura,<br />
+        Karnataka — 562162, India<br />
+        Email: <a href="mailto:admission@bharathinursing.com">admission@bharathinursing.com</a><br />
+        Phone: <a href="tel:+919847139798">+91 98471 39798</a>
+      </p>
+
+    </div>
+  </section>
+
+</BaseLayout>

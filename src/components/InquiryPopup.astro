@@ -145,9 +145,9 @@ const ACCESS_KEY = '93ae7cae-df0a-4604-bb32-a8adb1f210b0';
 </div>
 
 <script>
-  const STORAGE_KEY = 'inquiryPopupDismissedAt';
-  const SUPPRESS_DAYS = 30;
+  const SESSION_KEY = 'inquiryPopupDismissedThisSession';
   const SHOW_DELAY_MS = 0;
+  const HOME_PATHS = ['/', '/index.html'];
 
   const popup = document.getElementById('inquiry-popup');
   const card = popup?.querySelector('[data-popup-card]');
@@ -159,21 +159,15 @@ const ACCESS_KEY = '93ae7cae-df0a-4604-bb32-a8adb1f210b0';
   const submitBtn = form?.querySelector('[data-submit-btn]') as HTMLButtonElement | null;
   const submitLabel = form?.querySelector('[data-submit-label]') as HTMLElement | null;
 
-  if (popup && form) {
+  const isHomePage = HOME_PATHS.includes(window.location.pathname) || window.location.pathname === '';
+
+  if (popup && form && isHomePage) {
     const isSuppressed = () => {
-      try {
-        const stored = localStorage.getItem(STORAGE_KEY);
-        if (!stored) return false;
-        const dismissedAt = parseInt(stored, 10);
-        if (Number.isNaN(dismissedAt)) return false;
-        return Date.now() - dismissedAt < SUPPRESS_DAYS * 24 * 60 * 60 * 1000;
-      } catch {
-        return false;
-      }
+      try { return sessionStorage.getItem(SESSION_KEY) === '1'; } catch { return false; }
     };
 
     const recordDismissal = () => {
-      try { localStorage.setItem(STORAGE_KEY, String(Date.now())); } catch { /* ignore */ }
+      try { sessionStorage.setItem(SESSION_KEY, '1'); } catch { /* ignore */ }
     };
 
     let lastFocused: Element | null = null;
