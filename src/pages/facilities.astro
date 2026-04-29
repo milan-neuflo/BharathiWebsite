@@ -6,42 +6,42 @@ const facilities = [
   {
     name: 'Clinical Simulation Labs',
     description: 'Equipped with high-fidelity mannequins and hospital-grade equipment for realistic bedside training and emergency response scenarios.',
-    image: 'https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=800&q=80',
+    image: `${base}/images/figma/job-05018.jpg`,
     features: ['High-fidelity patient simulators', 'Hospital-grade monitoring equipment', 'Emergency response stations', 'Debriefing rooms'],
     size: 'large',
   },
   {
     name: 'Digital Library',
     description: 'A modern, air-conditioned library with over 15,000 volumes, e-journal access, and dedicated research terminals.',
-    image: 'https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=800&q=80',
+    image: `${base}/images/figma/job-04866.jpg`,
     features: ['15,000+ books & journals', 'E-library access 24/7', 'Research terminals', 'Quiet study zones'],
     size: 'small',
   },
   {
     name: 'Anatomy & Physiology Lab',
     description: 'Fully equipped with anatomical models, charts, and dissection facilities for comprehensive human body studies.',
-    image: 'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=800&q=80',
+    image: `${base}/images/figma/job-05015.jpg`,
     features: ['3D anatomical models', 'Digital microscopy stations', 'Specimen collection', 'Interactive displays'],
     size: 'small',
   },
   {
     name: 'Community Health Center',
     description: 'An on-campus center where students gain real-world experience in primary healthcare delivery and community outreach programs.',
-    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80',
+    image: `${base}/images/figma/job-04372.jpg`,
     features: ['Patient assessment rooms', 'Health education area', 'Outreach program base', 'Vaccination station'],
     size: 'medium',
   },
   {
     name: 'Computer Lab',
     description: 'State-of-the-art computer lab with healthcare software, statistical tools, and online learning platforms.',
-    image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80',
+    image: `${base}/images/figma/job-04561.jpg`,
     features: ['40+ workstations', 'Healthcare IT training', 'Statistical software', 'Online exam center'],
     size: 'medium',
   },
   {
     name: 'Auditorium & Seminar Halls',
     description: 'A 500-seat auditorium and multiple seminar halls equipped with AV systems for conferences, workshops, and guest lectures.',
-    image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80',
+    image: `${base}/images/figma/job-04897.jpg`,
     features: ['500-seat capacity', 'Full AV system', 'Video conferencing', 'Workshop spaces'],
     size: 'large',
   },
@@ -59,14 +59,14 @@ const hostelAmenities = [
 ];
 
 const galleryImages = [
-  { src: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&q=80', alt: 'Students in classroom' },
-  { src: 'https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=600&q=80', alt: 'Practical session' },
-  { src: 'https://images.unsplash.com/photo-1559757175-5700dde675bc?w=600&q=80', alt: 'Lab training' },
-  { src: 'https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=600&q=80', alt: 'Campus life' },
-  { src: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&q=80', alt: 'Clinical training' },
-  { src: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&q=80', alt: 'Graduation day' },
-  { src: 'https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=600&q=80', alt: 'Simulation lab' },
-  { src: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&q=80', alt: 'Hospital visit' },
+  { src: `${base}/images/figma/job-05167.jpg`, alt: 'Students in classroom' },
+  { src: `${base}/images/figma/job-05142.jpg`, alt: 'Practical session' },
+  { src: `${base}/images/figma/job-04920.jpg`, alt: 'Lab training' },
+  { src: `${base}/images/figma/job-05045.jpg`, alt: 'Campus life' },
+  { src: `${base}/images/figma/job-05052.jpg`, alt: 'Clinical training' },
+  { src: `${base}/images/figma/job-04910.jpg`, alt: 'Graduation day' },
+  { src: `${base}/images/figma/job-05030.jpg`, alt: 'Simulation lab' },
+  { src: `${base}/images/figma/job-04631.jpg`, alt: 'Hospital visit' },
 ];
 ---
 
@@ -75,7 +75,7 @@ const galleryImages = [
   <!-- ============ HERO ============ -->
   <section class="relative py-32 overflow-hidden">
     <img
-      src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=1920&q=80"
+      src={`${base}/images/figma/job-05030.jpg`}
       alt="Campus facilities"
       class="absolute inset-0 w-full h-full object-cover"
     />
@@ -157,7 +157,7 @@ const galleryImages = [
       <div class="w-full lg:w-[480px] flex-shrink-0">
         <div class="rounded-lg overflow-hidden shadow-2xl">
           <img
-            src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=800&q=80"
+            src={`${base}/images/figma/job-04631.jpg`}
             alt="Hostel accommodation"
             class="w-full h-auto object-cover"
           />

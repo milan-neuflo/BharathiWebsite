@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout title="Contact & Admissions | Bharathi College of Nursing" activeNav="">
@@ -7,7 +8,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <!-- ============ HERO ============ -->
   <section class="relative py-32 overflow-hidden">
     <img
-      src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=1920&q=80"
+      src={`${base}/images/figma/job-05015.jpg`}
       alt="Contact us"
       class="absolute inset-0 w-full h-full object-cover"
     />

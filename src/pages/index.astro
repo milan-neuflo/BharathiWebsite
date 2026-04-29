@@ -9,7 +9,7 @@ const base = import.meta.env.BASE_URL;
   <section class="relative min-h-[90vh] flex items-center overflow-hidden">
     <!-- Background Image -->
     <img
-      src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=1920&q=80"
+      src={`${base}/images/figma/job-04250.jpg`}
       alt="Nursing students"
       class="absolute inset-0 w-full h-full object-cover"
     />
@@ -62,7 +62,7 @@ const base = import.meta.env.BASE_URL;
       <!-- Large Feature: Simulation Labs -->
       <div class="lg:col-span-8 relative rounded-lg overflow-hidden min-h-[500px] lg:min-h-[600px] group">
         <img
-          src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=1200&q=80"
+          src={`${base}/images/figma/job-04920.jpg`}
           alt="Clinical simulation lab"
           class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
         />
@@ -121,7 +121,7 @@ const base = import.meta.env.BASE_URL;
       <div class="flex-shrink-0 flex items-center justify-center w-full lg:w-auto">
         <div class="-rotate-2 bg-white border-[12px] border-white rounded shadow-2xl overflow-hidden max-w-[568px]">
           <img
-            src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80"
+            src={`${base}/images/figma/job-04470.jpg`}
             alt="Nursing students in classroom"
             class="w-full h-auto object-cover"
           />
@@ -285,11 +285,11 @@ const base = import.meta.env.BASE_URL;
 
       <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
         {[
-          'https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&q=80',
-          'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=400&q=80',
-          'https://images.unsplash.com/photo-1559757175-5700dde675bc?w=400&q=80',
-          'https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=400&q=80',
-          'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&q=80',
+          `${base}/images/figma/job-03773.jpg`,
+          `${base}/images/figma/job-05135.jpg`,
+          `${base}/images/figma/job-05169.jpg`,
+          `${base}/images/figma/job-04966.jpg`,
+          `${base}/images/figma/job-05009.jpg`,
         ].map((src, i) => (
           <div class="rounded-lg overflow-hidden shadow-lg aspect-square group">
             <img

@@ -5,18 +5,18 @@ const base = import.meta.env.BASE_URL;
 const categories = ['All', 'Campus', 'Labs', 'Events', 'Students', 'Placements'];
 
 const photos = [
-  { src: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80', alt: 'Students in classroom', category: 'Students', span: 'col-span-2 row-span-2' },
-  { src: 'https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=600&q=80', alt: 'Simulation lab', category: 'Labs', span: '' },
-  { src: 'https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=600&q=80', alt: 'Practical training', category: 'Labs', span: '' },
-  { src: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&q=80', alt: 'Clinical session', category: 'Students', span: '' },
-  { src: 'https://images.unsplash.com/photo-1559757175-5700dde675bc?w=800&q=80', alt: 'Campus event', category: 'Events', span: 'col-span-2' },
-  { src: 'https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=600&q=80', alt: 'Campus view', category: 'Campus', span: '' },
-  { src: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&q=80', alt: 'Graduation ceremony', category: 'Events', span: '' },
-  { src: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&q=80', alt: 'Hospital placement', category: 'Placements', span: '' },
-  { src: 'https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=600&q=80', alt: 'Library', category: 'Campus', span: '' },
-  { src: 'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=800&q=80', alt: 'Anatomy lab', category: 'Labs', span: 'col-span-2' },
-  { src: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&q=80', alt: 'Computer lab', category: 'Campus', span: '' },
-  { src: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&q=80', alt: 'Seminar hall', category: 'Events', span: '' },
+  { src: `${base}/images/figma/job-03773.jpg`, alt: 'Students in classroom', category: 'Students', span: 'col-span-2 row-span-2' },
+  { src: `${base}/images/figma/job-05018.jpg`, alt: 'Simulation lab', category: 'Labs', span: '' },
+  { src: `${base}/images/figma/job-05142.jpg`, alt: 'Practical training', category: 'Labs', span: '' },
+  { src: `${base}/images/figma/job-04966.jpg`, alt: 'Clinical session', category: 'Students', span: '' },
+  { src: `${base}/images/figma/job-05030.jpg`, alt: 'Campus event', category: 'Events', span: 'col-span-2' },
+  { src: `${base}/images/figma/job-04250.jpg`, alt: 'Campus view', category: 'Campus', span: '' },
+  { src: `${base}/images/figma/job-04910.jpg`, alt: 'Graduation ceremony', category: 'Events', span: '' },
+  { src: `${base}/images/figma/job-04372.jpg`, alt: 'Hospital placement', category: 'Placements', span: '' },
+  { src: `${base}/images/figma/job-04866.jpg`, alt: 'Library', category: 'Campus', span: '' },
+  { src: `${base}/images/figma/job-05015.jpg`, alt: 'Anatomy lab', category: 'Labs', span: 'col-span-2' },
+  { src: `${base}/images/figma/job-04561.jpg`, alt: 'Computer lab', category: 'Campus', span: '' },
+  { src: `${base}/images/figma/job-04897.jpg`, alt: 'Seminar hall', category: 'Events', span: '' },
 ];
 ---
 
@@ -25,7 +25,7 @@ const photos = [
   <!-- ============ HERO ============ -->
   <section class="relative py-32 overflow-hidden">
     <img
-      src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1920&q=80"
+      src={`${base}/images/figma/job-04250.jpg`}
       alt="Gallery"
       class="absolute inset-0 w-full h-full object-cover"
     />
