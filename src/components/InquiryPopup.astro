@@ -1,0 +1,264 @@
+---
+const ACCESS_KEY = '93ae7cae-df0a-4604-bb32-a8adb1f210b0';
+---
+
+<div
+  id="inquiry-popup"
+  class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/60 backdrop-blur-sm px-4"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="inquiry-popup-title"
+  aria-hidden="true"
+>
+  <div
+    class="relative bg-white rounded-lg shadow-2xl w-full max-w-lg max-h-[92vh] overflow-y-auto"
+    data-popup-card
+  >
+    <button
+      type="button"
+      id="inquiry-popup-close"
+      aria-label="Close inquiry form"
+      class="absolute top-4 right-4 w-9 h-9 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-text-secondary transition-colors"
+    >
+      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+      </svg>
+    </button>
+
+    <div class="px-8 pt-10 pb-6 border-b border-gray-100">
+      <span class="font-work-sans font-semibold text-gold-dark text-xs uppercase tracking-[2.4px]">
+        Admissions Open
+      </span>
+      <h2 id="inquiry-popup-title" class="font-newsreader italic text-3xl text-navy mt-2 leading-tight">
+        Begin Your Nursing Journey
+      </h2>
+      <p class="text-text-secondary text-sm mt-3 leading-relaxed">
+        Share a few details and our admissions team will reach out within 24 hours.
+      </p>
+    </div>
+
+    <form id="inquiry-popup-form" class="px-8 py-6 flex flex-col gap-4">
+      <input type="hidden" name="access_key" value={ACCESS_KEY} />
+      <input type="hidden" name="subject" value="New Admissions Inquiry — Bharathi College of Nursing" />
+      <input type="hidden" name="from_name" value="Bharathi Nursing Website" />
+      <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off" />
+
+      <label class="flex flex-col gap-1.5">
+        <span class="font-work-sans font-semibold text-text-secondary text-xs uppercase tracking-wider">Full Name</span>
+        <input
+          type="text"
+          name="name"
+          required
+          autocomplete="name"
+          class="bg-blue-bg border-0 rounded-sm px-4 py-3 text-base text-navy focus:outline-none focus:ring-2 focus:ring-gold transition"
+          placeholder="Your name"
+        />
+      </label>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <label class="flex flex-col gap-1.5">
+          <span class="font-work-sans font-semibold text-text-secondary text-xs uppercase tracking-wider">Phone</span>
+          <input
+            type="tel"
+            name="phone"
+            required
+            autocomplete="tel"
+            inputmode="tel"
+            pattern="[0-9+\s\-()]{7,}"
+            class="bg-blue-bg border-0 rounded-sm px-4 py-3 text-base text-navy focus:outline-none focus:ring-2 focus:ring-gold transition"
+            placeholder="+91"
+          />
+        </label>
+        <label class="flex flex-col gap-1.5">
+          <span class="font-work-sans font-semibold text-text-secondary text-xs uppercase tracking-wider">Email</span>
+          <input
+            type="email"
+            name="email"
+            required
+            autocomplete="email"
+            class="bg-blue-bg border-0 rounded-sm px-4 py-3 text-base text-navy focus:outline-none focus:ring-2 focus:ring-gold transition"
+            placeholder="email@address.com"
+          />
+        </label>
+      </div>
+
+      <label class="flex flex-col gap-1.5">
+        <span class="font-work-sans font-semibold text-text-secondary text-xs uppercase tracking-wider">Course Interest</span>
+        <select
+          name="course"
+          required
+          class="bg-blue-bg border-0 rounded-sm px-4 py-3 text-base text-navy focus:outline-none focus:ring-2 focus:ring-gold transition"
+        >
+          <option value="" disabled selected>Select a program</option>
+          <option value="B.Sc Nursing">B.Sc Nursing</option>
+          <option value="GNM Nursing">GNM Nursing</option>
+          <option value="Post Basic B.Sc">Post Basic B.Sc</option>
+          <option value="M.Sc Nursing">M.Sc Nursing</option>
+          <option value="Not sure yet">Not sure yet</option>
+        </select>
+      </label>
+
+      <label class="flex flex-col gap-1.5">
+        <span class="font-work-sans font-semibold text-text-secondary text-xs uppercase tracking-wider">Message <span class="text-text-secondary/60 normal-case">(optional)</span></span>
+        <textarea
+          name="message"
+          rows="2"
+          class="bg-blue-bg border-0 rounded-sm px-4 py-3 text-base text-navy focus:outline-none focus:ring-2 focus:ring-gold transition resize-none"
+          placeholder="Tell us about your goals…"
+        ></textarea>
+      </label>
+
+      <button
+        type="submit"
+        class="bg-navy text-white font-work-sans font-semibold text-sm uppercase tracking-[1.4px] py-4 rounded-sm hover:bg-navy/90 transition-colors mt-2 disabled:opacity-60 disabled:cursor-not-allowed"
+        data-submit-btn
+      >
+        <span data-submit-label>Submit Inquiry</span>
+      </button>
+
+      <p class="text-text-secondary text-xs text-center pt-1">
+        We'll only use these details to respond to your inquiry.
+      </p>
+    </form>
+
+    <div id="inquiry-popup-success" class="hidden px-8 py-12 text-center">
+      <div class="w-14 h-14 mx-auto rounded-full bg-gold/20 flex items-center justify-center">
+        <svg class="w-8 h-8 text-gold-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+        </svg>
+      </div>
+      <h3 class="font-newsreader italic text-2xl text-navy mt-4">Thank you!</h3>
+      <p class="text-text-secondary text-base mt-2 max-w-sm mx-auto leading-relaxed">
+        We've received your inquiry. Our admissions team will be in touch within 24 hours.
+      </p>
+      <button
+        type="button"
+        id="inquiry-popup-success-close"
+        class="mt-6 bg-navy text-white font-work-sans font-semibold text-sm uppercase tracking-[1.4px] px-8 py-3 rounded-sm hover:bg-navy/90 transition-colors"
+      >
+        Close
+      </button>
+    </div>
+
+    <div id="inquiry-popup-error" class="hidden px-8 pb-6 text-sm text-red-600" role="alert"></div>
+  </div>
+</div>
+
+<script>
+  const STORAGE_KEY = 'inquiryPopupDismissedAt';
+  const SUPPRESS_DAYS = 30;
+  const SHOW_DELAY_MS = 5000;
+
+  const popup = document.getElementById('inquiry-popup');
+  const card = popup?.querySelector('[data-popup-card]');
+  const form = document.getElementById('inquiry-popup-form') as HTMLFormElement | null;
+  const successPanel = document.getElementById('inquiry-popup-success');
+  const errorPanel = document.getElementById('inquiry-popup-error');
+  const closeBtn = document.getElementById('inquiry-popup-close');
+  const successCloseBtn = document.getElementById('inquiry-popup-success-close');
+  const submitBtn = form?.querySelector('[data-submit-btn]') as HTMLButtonElement | null;
+  const submitLabel = form?.querySelector('[data-submit-label]') as HTMLElement | null;
+
+  if (popup && form) {
+    const isSuppressed = () => {
+      try {
+        const stored = localStorage.getItem(STORAGE_KEY);
+        if (!stored) return false;
+        const dismissedAt = parseInt(stored, 10);
+        if (Number.isNaN(dismissedAt)) return false;
+        return Date.now() - dismissedAt < SUPPRESS_DAYS * 24 * 60 * 60 * 1000;
+      } catch {
+        return false;
+      }
+    };
+
+    const recordDismissal = () => {
+      try { localStorage.setItem(STORAGE_KEY, String(Date.now())); } catch { /* ignore */ }
+    };
+
+    let lastFocused: Element | null = null;
+    let opened = false;
+
+    const open = () => {
+      if (opened) return;
+      if (isSuppressed()) return;
+      opened = true;
+      lastFocused = document.activeElement;
+      popup.classList.remove('hidden');
+      popup.classList.add('flex');
+      popup.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      const firstInput = form.querySelector<HTMLInputElement>('input[name="name"]');
+      firstInput?.focus();
+    };
+
+    const close = (dismiss = true) => {
+      popup.classList.add('hidden');
+      popup.classList.remove('flex');
+      popup.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      if (dismiss) recordDismissal();
+      if (lastFocused instanceof HTMLElement) lastFocused.focus();
+    };
+
+    closeBtn?.addEventListener('click', () => close(true));
+    successCloseBtn?.addEventListener('click', () => close(true));
+
+    popup.addEventListener('click', (e) => {
+      if (e.target === popup) close(true);
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !popup.classList.contains('hidden')) close(true);
+    });
+
+    if (!isSuppressed()) {
+      const timer = window.setTimeout(open, SHOW_DELAY_MS);
+      const exitIntent = (e: MouseEvent) => {
+        if (e.clientY <= 0) {
+          window.clearTimeout(timer);
+          document.removeEventListener('mouseleave', exitIntent);
+          open();
+        }
+      };
+      document.addEventListener('mouseleave', exitIntent);
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (errorPanel) {
+        errorPanel.textContent = '';
+        errorPanel.classList.add('hidden');
+      }
+      if (submitBtn) submitBtn.disabled = true;
+      if (submitLabel) submitLabel.textContent = 'Sending…';
+
+      try {
+        const data = new FormData(form);
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { Accept: 'application/json' },
+          body: data,
+        });
+        const json = await res.json().catch(() => ({}));
+        if (res.ok && json.success !== false) {
+          form.classList.add('hidden');
+          successPanel?.classList.remove('hidden');
+          recordDismissal();
+        } else {
+          throw new Error(json?.message || `Submission failed (${res.status})`);
+        }
+      } catch (err) {
+        if (errorPanel) {
+          errorPanel.textContent = err instanceof Error
+            ? err.message
+            : 'Something went wrong. Please try again or email admissions@bharathinursing.edu.';
+          errorPanel.classList.remove('hidden');
+        }
+      } finally {
+        if (submitBtn) submitBtn.disabled = false;
+        if (submitLabel) submitLabel.textContent = 'Submit Inquiry';
+      }
+    });
+  }
+</script>

@@ -1,6 +1,7 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import InquiryPopup from '../components/InquiryPopup.astro';
 
 interface Props {
   title: string;
@@ -33,5 +34,6 @@ const base = import.meta.env.BASE_URL;
       <slot />
     </main>
     <Footer />
+    <InquiryPopup />
   </body>
 </html>
