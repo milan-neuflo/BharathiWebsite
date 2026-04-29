@@ -10,7 +10,7 @@ interface Props {
 }
 
 const { title, description = 'Bharathi College of Nursing - Excellence in Healthcare Education in Bangalore', activeNav = '' } = Astro.props;
-const base = import.meta.env.BASE_URL;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <!doctype html>

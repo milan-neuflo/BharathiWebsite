@@ -3,7 +3,6 @@ import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
-  site: 'https://milan-neuflo.github.io',
-  base: '/BharathiWebsite',
+  site: 'https://bharathinursing.com',
   integrations: [tailwind()],
 });
