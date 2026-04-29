@@ -201,41 +201,7 @@ const milestones = [
     </div>
   </section>
 
-  <!-- ============ RANK HOLDERS & DISTINCTION STUDENTS ============ -->
-  <section class="bg-white px-8 py-24">
-    <div class="max-w-container mx-auto">
-      <div class="text-center mb-16 flex flex-col items-center gap-4">
-        <span class="font-work-sans font-semibold text-gold-dark text-sm uppercase tracking-[2.8px]">Student Achievements</span>
-        <h2 class="font-newsreader italic text-5xl text-navy">Rank Holders & Distinction Students</h2>
-        <p class="text-text-secondary text-lg max-w-2xl mt-2">
-          Celebrating our top-performing students whose dedication and excellence have set benchmarks in nursing education.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {rankHolders.map((student) => (
-          <div class="bg-light-bg rounded-lg overflow-hidden shadow-md group relative">
-            <!-- Rank Badge -->
-            <div class="absolute top-4 right-4 z-10 bg-gold text-gold-dark font-work-sans font-bold text-xs uppercase tracking-wider px-3 py-1.5 rounded-full shadow-md">
-              {student.rank}
-            </div>
-            <div class="aspect-[4/5] overflow-hidden">
-              <img
-                src={student.image}
-                alt={student.name}
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-            <div class="p-6 flex flex-col gap-2">
-              <h3 class="font-newsreader italic text-xl text-navy">{student.name}</h3>
-              <span class="font-work-sans font-semibold text-gold-dark text-xs uppercase tracking-wider">{student.year}</span>
-              <p class="text-text-secondary text-sm leading-relaxed mt-2">{student.achievement}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
+  {/* Rank Holders & Distinction Students — hidden for now */}
 
   <!-- ============ VALUES ============ -->
   <section class="bg-blue-bg px-8 py-24">
